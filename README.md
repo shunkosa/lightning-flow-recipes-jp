@@ -1,39 +1,37 @@
 # Lightning Flow Recipes
+{Image}
+
 インストールしてすぐに使用できる Lightning フローのサンプル集です。インストールしたフローは編集および別名で保存することができます。
 
-## 使用方法
+## 📦使用方法
 以下からパッケージをインストールしてください。
 
 * Sandbox 組織
-    * https://test.salesforce.com/packaging/installPackage.apexp?p0=04tf4000004EyqsAAC
+    * https://test.salesforce.com/packaging/installPackage.apexp?p0=04tf4000004Eyw8AAC
 * Developer Edition 組織
-    * https://login.salesforce.com/packaging/installPackage.apexp?p0=04tf4000004EyqsAAC
-* 新しいTrailhead Playground 組織
-    * アプリケーションランチャーから、[Playground Starter] アプリケーションを起動し、[パッケージのインストール] タブをクリックします。インストール ID に、`04tf4000004EyqsAAC` を入力し、[インストール] ボタンをクリックしてください。
+    * https://login.salesforce.com/packaging/installPackage.apexp?p0=04tf4000004Eyw8AAC
+* 新しい Trailhead Playground 組織
+    * アプリケーションランチャーから、[Playground Starter] アプリケーションを起動し、[パッケージのインストール] タブをクリックします。インストール ID に、`04tf4000004Eyw8AAC` を入力し、[インストール] ボタンをクリックしてください。
 
-## パッケージに含まれるフロー
+## 📚パッケージに含まれるフロー
 
 ### 画面フロー
 
-|フロー名|フローで扱う内容|
+|フロー名|フローから学べる内容|
 |---|---|
 |取引先の作成画面|・[画面] の使い方<br>・[レコードの作成] の使い方<br>・他のフォームの値に応じてフォームの表示/非表示を切り替える| -->
 |リードの更新画面|・開いているレコードの ID を取得する<br>・レコード変数を用いた [レコードの更新] の使い方<br>・選択リスト値のデフォルト値として現在の値を取得する|
 |取引先と商談を1度に作成する画面|・リレーションのあるオブジェクトのレコードを作成する|
 |商談と取引先責任者ロールを1度に作成する画面|・[ルックアップ] の使い方<br>・リレーションのあるオブジェクトのレコードを作成する<br>・固定の大きさのレコードコレクション変数を用いて複数のレコードを作成する|
 |ToDoとファイルの登録画面|・[ファイルのアップロード] の使い方|
-|取引先責任者の検索・更新画面|・画面要素に入力チェックを適用する<br>・コレクション変数の大きさ(件数)を取得する<br>・複数選択リストの選択結果をコレクション変数に保存する|
+|取引先責任者の検索・更新画面|・画面要素に入力チェックを適用する<br>・コレクション変数の大きさ(件数)を取得する<br>・チェックボックスグループの選択結果をコレクション変数に保存しレコードを更新する|
 
 ### 自動起動フロー
 
 
-## 補足
+## 📋補足
 * [Help に記載のベストプラクティス](https://help.salesforce.com/articleView?id=flow_prep_bestpractices.htm&type=5) に可能な限り従ってください。
 * 実際にフローを業務で使用する際は、各要素の API 参照名に命名規則を定めましょう。旧 Cloud Flow Designer (昔のフロービルダー) から Lightning フロービルダーに変わり、要素の検索はしやすくなりましたが、一定のルールで要素を作成しているとメンテナンスがしやすいフローになります。
 
-### 参考リンク
-* 
-* 
-
-## フィードバック
-こんなフローのサンプルが見たい、こんなフローを作ったので入れて欲しいといったご要望、または不具合の報告などありましたら [Issue](https://github.com/shunkosa/lightning-flow-recipes-jp/issues/new) や [Twitter](https://www.twitter.com/shunkosa) からお願いします。
+## 🙏フィードバック
+ご質問、ご要望、または不具合の報告などありましたら [Issue](https://github.com/shunkosa/lightning-flow-recipes-jp/issues/new) や [Twitter](https://www.twitter.com/shunkosa) からお知らせください。
