@@ -10,3 +10,7 @@ package.xml
 
 # LWC Jest
 **/__tests__/**
+
+# Unnecessary metadata
+**/layouts/**
+**/objects/**
