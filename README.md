@@ -1,5 +1,5 @@
 # Lightning Flow Recipes
-{Image}
+![](docs/image.png)
 
 インストールしてすぐに使用できる Lightning フローのサンプル集です。インストールしたフローは編集および別名で保存することができます。
 
