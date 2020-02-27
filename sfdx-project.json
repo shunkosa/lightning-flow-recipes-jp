@@ -1,0 +1,18 @@
+{
+    "packageDirectories": [
+        {
+            "path": "force-app",
+            "default": true,
+            "package": "lightning-flow-recipes",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.NEXT"
+        }
+    ],
+    "namespace": "",
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "sourceApiVersion": "48.0",
+    "packageAliases": {
+        "lightning-flow-recipes": "0Hof40000004CFkCAM",
+        "lightning-flow-recipes@0.1.0-1": "04tf4000004EyqsAAC"
+    }
+}
