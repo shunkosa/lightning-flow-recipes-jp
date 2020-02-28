@@ -7,11 +7,11 @@
 以下からパッケージをインストールしてください。
 
 * Sandbox 組織
-    * https://test.salesforce.com/packaging/installPackage.apexp?p0=04tf4000004EywXAAS
+    * https://test.salesforce.com/packaging/installPackage.apexp?p0=04tf4000004EywcAAC
 * Developer Edition 組織
-    * https://login.salesforce.com/packaging/installPackage.apexp?p0=04tf4000004EywXAAS
+    * https://login.salesforce.com/packaging/installPackage.apexp?p0=04tf4000004EywcAAC
 * 新しい Trailhead Playground 組織
-    * アプリケーションランチャーから、[Playground Starter] アプリケーションを起動し、[パッケージのインストール] タブをクリックします。インストール ID に、`04tf4000004EywXAAS` を入力し、[インストール] ボタンをクリックしてください。
+    * アプリケーションランチャーから、[Playground Starter] アプリケーションを起動し、[パッケージのインストール] タブをクリックします。インストール ID に、`04tf4000004EywcAAC` を入力し、[インストール] ボタンをクリックしてください。
 
 ## 📚パッケージに含まれるフロー
 

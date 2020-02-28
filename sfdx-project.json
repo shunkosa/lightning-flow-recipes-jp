@@ -5,7 +5,7 @@
             "default": true,
             "package": "lightning-flow-recipes",
             "versionName": "ver 0.3",
-            "versionNumber": "0.3.0.NEXT"
+            "versionNumber": "0.3.1.NEXT"
         }
     ],
     "namespace": "",
@@ -15,6 +15,7 @@
         "lightning-flow-recipes": "0Hof40000004CFkCAM",
         "lightning-flow-recipes@0.1.0-1": "04tf4000004EyqsAAC",
         "lightning-flow-recipes@0.2.0-1": "04tf4000004Eyw8AAC",
-        "lightning-flow-recipes@0.3.0-1": "04tf4000004EywXAAS"
+        "lightning-flow-recipes@0.3.0-1": "04tf4000004EywXAAS",
+        "lightning-flow-recipes@0.3.1-1": "04tf4000004EywcAAC"
     }
 }
