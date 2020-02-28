@@ -30,6 +30,7 @@
 |フロー名|フローから学べる内容|
 |---|---|
 |[取引先の請求先住所を納入先住所に自動コピー](docs/SyncAccountBillingAddressToShippingAddress/SyncAccountBillingAddressToShippingAddress.md)|・保存前フローの使い方/ユースケース|
+|[Web-to-ケース/メール-to-ケースで取引先責任者を自動作成](docs/CreateContactAndUpdateCaseFromWebOrEmail/CreateContactAndUpdateCaseFromWebOrEmail.md)|・プロセスからフローの呼び出し|
 
 
 ## 📋補足
