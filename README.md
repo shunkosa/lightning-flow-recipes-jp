@@ -27,6 +27,9 @@
 |[取引先責任者の検索・更新画面](docs/ContactSearchAndUpdateScreen/ContactSearchAndUpdateScreen.md)|・画面要素に入力チェックを適用する<br>・コレクション変数の大きさ(件数)を取得する<br>・複数選択リスト (チェックボックスグループ) の選択結果をコレクション変数に保存しレコードを更新する|
 
 ### 自動起動フロー
+|フロー名|フローから学べる内容|
+|---|---|
+|[取引先の請求先住所を納入先住所に自動コピー](docs/SyncAccountBillingAddressToShippingAddress/SyncAccountBillingAddressToShippingAddress.md)|・保存前フローの使い方/ユースケース|
 
 
 ## 📋補足
