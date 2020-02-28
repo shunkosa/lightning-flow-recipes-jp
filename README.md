@@ -21,9 +21,9 @@
 |---|---|
 |[取引先の作成画面](docs/AccountCreateScreen/AccountCreateScreen.md)|・[画面] の使い方<br>・[レコードの作成] の使い方<br>・他のフォームの値に応じてフォームの表示/非表示を切り替える|
 |[リードの更新画面](docs/LeadUpdateScreen/LeadUpdateScreen.md)|・開いているレコードの ID を取得する<br>・レコード変数を用いた [レコードの更新] の使い方<br>・選択リスト値のデフォルト値として現在の値を取得する|
-|取引先と商談を1度に作成する画面|・リレーションのあるオブジェクトのレコードを作成する|
-|商談と取引先責任者ロールを1度に作成する画面|・[ルックアップ] の使い方<br>・リレーションのあるオブジェクトのレコードを作成する<br>・固定の大きさのレコードコレクション変数を用いて複数のレコードを作成する|
-|ToDoとファイルの登録画面|・[ファイルのアップロード] の使い方|
+|[取引先と商談を1度に作成する画面](docs/AccountOpportunityCreateScreen/AccountOpportunityCreateScreen.md)|・リレーションのあるオブジェクトのレコードを作成する|
+|[商談と取引先責任者ロールを1度に作成する画面](docs/OpportunityAndContactRoleCreateScreen/OpportunityAndContactRoleCreateScreen.md)|・[ルックアップ] の使い方<br>・リレーションのあるオブジェクトのレコードを作成する<br>・固定の大きさのレコードコレクション変数を用いて複数のレコードを作成する|
+|[ToDoとファイルの登録画面](docs/TaskWithFileCreateScreen/TaskWithFileCreateScreen.md)|・[ファイルのアップロード] の使い方|
 |[取引先責任者の検索・更新画面](docs/ContactSearchAndUpdateScreen/ContactSearchAndUpdateScreen.md)|・画面要素に入力チェックを適用する<br>・コレクション変数の大きさ(件数)を取得する<br>・複数選択リスト (チェックボックスグループ) の選択結果をコレクション変数に保存しレコードを更新する|
 
 ### 自動起動フロー
