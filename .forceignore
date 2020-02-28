@@ -14,3 +14,4 @@ package.xml
 # Unnecessary metadata
 **/layouts/**
 **/objects/**
+**/workflows/**
