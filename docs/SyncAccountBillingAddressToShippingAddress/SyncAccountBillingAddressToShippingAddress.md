@@ -3,6 +3,8 @@
 ![](screenshot.png)
 
 ## ポイント
+取引先の請求先住所を納入先住所に自動コピーするフローです。
+
 ### 保存前フローについて
 [Spring '20 で GA となった保存前フロー](https://releasenotes.docs.salesforce.com/ja-jp/spring20/release-notes/rn_forcecom_flow_fbuilder_before_save_updates.htm)はプロセスビルダーと同様に、レコードの作成や更新をきっかけとして起動する自動化プロセスです。プロセスビルダーと比較して処理が高速であることがメリットです。例えば、コンパイルサイズの非常に大きな数式を作成している場合は、このフローに置き換えるとメンテナンスしやすくなる可能性があるでしょう。
 
