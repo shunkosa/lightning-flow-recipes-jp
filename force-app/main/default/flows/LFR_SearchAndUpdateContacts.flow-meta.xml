@@ -96,13 +96,13 @@
     </assignments>
     <decisions>
         <name>decision_isContactSelected</name>
-        <label>取引先責任者が選択されているか</label>
+        <label>コレクション変数に追加されていない選択リスト値があるか</label>
         <locationX>667</locationX>
         <locationY>228</locationY>
         <defaultConnector>
             <targetReference>update_Contacts</targetReference>
         </defaultConnector>
-        <defaultConnectorLabel>デフォルトの結果</defaultConnectorLabel>
+        <defaultConnectorLabel>0件</defaultConnectorLabel>
         <rules>
             <name>decisionResult_hasPicklistValue</name>
             <conditionLogic>and</conditionLogic>

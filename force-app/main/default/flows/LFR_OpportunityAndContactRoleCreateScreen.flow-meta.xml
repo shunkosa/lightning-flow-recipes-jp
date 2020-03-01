@@ -100,7 +100,7 @@
         <defaultConnector>
             <targetReference>decision_Contact2Exists</targetReference>
         </defaultConnector>
-        <defaultConnectorLabel>デフォルトの結果</defaultConnectorLabel>
+        <defaultConnectorLabel>取引先責任者1に値がない</defaultConnectorLabel>
         <rules>
             <name>decisionResult_Contact1Exists</name>
             <conditionLogic>and</conditionLogic>
@@ -125,7 +125,7 @@
         <defaultConnector>
             <targetReference>create_OpportunityContactRole</targetReference>
         </defaultConnector>
-        <defaultConnectorLabel>デフォルトの結果</defaultConnectorLabel>
+        <defaultConnectorLabel>取引先責任者2に値がない</defaultConnectorLabel>
         <rules>
             <name>decisionResult_Contact2Exists</name>
             <conditionLogic>and</conditionLogic>
