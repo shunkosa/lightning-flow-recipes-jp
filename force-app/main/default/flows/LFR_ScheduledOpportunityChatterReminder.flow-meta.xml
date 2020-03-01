@@ -3,10 +3,13 @@
     <actionCalls>
         <name>postToChatter</name>
         <label>Chatter投稿</label>
-        <locationX>380</locationX>
-        <locationY>279</locationY>
+        <locationX>382</locationX>
+        <locationY>295</locationY>
         <actionName>chatterPost</actionName>
         <actionType>chatterPost</actionType>
+        <connector>
+            <targetReference>loop_Opportunities</targetReference>
+        </connector>
         <inputParameters>
             <name>subjectNameOrId</name>
             <value>
@@ -28,12 +31,12 @@
         <expression>TODAY()</expression>
     </formulas>
     <interviewLabel>毎朝9時に完了予定日を過ぎた商談の所有者にChatter通知するフロー {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>毎朝9時に完了予定日を過ぎた商談の所有者にChatter通知するフロー</label>
+    <label>[Flow Recipes] 毎朝9時に完了予定日を過ぎた商談の所有者にChatter通知するフロー</label>
     <loops>
         <name>loop_Opportunities</name>
         <label>取得した商談を繰り返し</label>
         <locationX>380</locationX>
-        <locationY>48</locationY>
+        <locationY>49</locationY>
         <assignNextValueToReference>var_currentOpportunity</assignNextValueToReference>
         <collectionReference>get_Opportunity</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -58,7 +61,7 @@
         <name>get_Opportunity</name>
         <label>商談を取得</label>
         <locationX>217</locationX>
-        <locationY>48</locationY>
+        <locationY>49</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>loop_Opportunities</targetReference>
@@ -94,7 +97,7 @@
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <description>ループ内変数です。</description>
         <name>var_currentOpportunity</name>
