@@ -1,4 +1,4 @@
-baseURL = "http://shunkosa.github.io/lightning-flow-recipes-jp/"
+baseURL = "https://shunkosa.github.io/lightning-flow-recipes-jp/"
 languageCode = "ja"
 title = "Lightning Flow Recipes"
 theme = "cayman-hugo-theme"
