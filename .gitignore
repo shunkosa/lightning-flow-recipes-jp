@@ -32,3 +32,7 @@ ehthumbs.db
 $RECYCLE.BIN/
 
 scripts/
+
+# Hugo build
+public/
+resources/
