@@ -1,4 +1,9 @@
-# ToDoとファイルの登録画面
+---
+title: "ToDoとファイルの登録画面"
+date: 2020-02-28
+draft: false
+---
+
 新規 ToDo に続けてファイルをアップロードできる画面フローです。
 
 ![](screenshot.png)

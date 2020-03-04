@@ -1,4 +1,8 @@
-# Web-to-ケース/メール-to-ケースで取引先責任者を自動作成
+---
+title: "Web-to-ケース/メール-to-ケースで取引先責任者を自動作成"
+date: 2020-02-28
+draft: false
+---
 
 ![](screenshot.png)
 
