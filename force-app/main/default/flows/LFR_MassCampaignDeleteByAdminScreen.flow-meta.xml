@@ -73,7 +73,7 @@
     <recordDeletes>
         <name>delete_Campaings</name>
         <label>キャンペーンを削除</label>
-        <locationX>721</locationX>
+        <locationX>719</locationX>
         <locationY>241</locationY>
         <inputReference>get_CampaignCreatedByMe</inputReference>
     </recordDeletes>
