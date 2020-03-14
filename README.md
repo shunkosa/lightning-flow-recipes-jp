@@ -1,5 +1,5 @@
 # Lightning Flow Recipes
-**Webサイト [https://shunkosa.github.io/lightning-flow-recipes-jp/](https://shunkosa.github.io/lightning-flow-recipes-jp/)**
+**Webサイトができました🎉 [https://shunkosa.github.io/lightning-flow-recipes-jp/](https://shunkosa.github.io/lightning-flow-recipes-jp/)**
 
 ![](content/image.png)
 
