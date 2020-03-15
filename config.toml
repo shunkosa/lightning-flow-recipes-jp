@@ -18,9 +18,13 @@ theme = "cayman-hugo-theme"
     url = "/"
     weight = 1
   [[menu.nav]]
+    name = "Release Note"
+    url = "/changelog"
+    weight = 2
+  [[menu.nav]]
     name = "View on GitHub"
     url = "https://github.com/shunkosa/lightning-flow-recipes-jp/"
-    weight = 2
+    weight = 3
 
 [markup.goldmark.renderer]
   unsafe = true
