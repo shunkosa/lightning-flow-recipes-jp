@@ -12,11 +12,11 @@ draft: false
 以下からパッケージをインストールしてください。
 
 * Sandbox 組織
-    * https://test.salesforce.com/packaging/installPackage.apexp?p0=04tf4000004EywmAAC
+    * https://test.salesforce.com/packaging/installPackage.apexp?p0=04tf4000004Ez6YAAS
 * Developer Edition 組織
-    * https://login.salesforce.com/packaging/installPackage.apexp?p0=04tf4000004EywmAAC
+    * https://login.salesforce.com/packaging/installPackage.apexp?p0=04tf4000004Ez6YAAS
 * 新しい Trailhead Playground 組織
-    * アプリケーションランチャーから、[Playground Starter] アプリケーションを起動し、[パッケージのインストール] タブをクリックします。インストール ID に、`04tf4000004EywmAAC` を入力し、[インストール] ボタンをクリックしてください。
+    * アプリケーションランチャーから、[Playground Starter] アプリケーションを起動し、[パッケージのインストール] タブをクリックします。インストール ID に、`04tf4000004Ez6YAAS` を入力し、[インストール] ボタンをクリックしてください。
 
 ## ⚡️パッケージに含まれるフロー
 
@@ -31,6 +31,8 @@ draft: false
 |[商談と取引先責任者ロールを1度に作成する画面](opportunity-and-contact-role-create-screen)|・[ルックアップ] の使い方<br>・リレーションのあるオブジェクトのレコードを作成する<br>・固定の大きさのレコードコレクション変数を用いて複数のレコードを作成する|
 |[ToDoとファイルの登録画面](task-with-file-create-screen)|・[ファイルのアップロード] の使い方|
 |[取引先責任者の検索・更新画面](contact-search-and-update-screen)|・画面要素に入力チェックを適用する<br>・コレクション変数の大きさ(件数)を取得する<br>・複数選択リスト (チェックボックスグループ) の選択結果をコレクション変数に保存しレコードを更新する|
+|[システム管理者だけが自分が作成したキャンペーンを一括削除できる画面](mass-campaign-delete-by-admin-screen)|・フローを実行しているユーザ情報の取得<br>・レコードの削除|
+|[ログイン直後にお知らせメッセージを表示](basic-login-flow)|・ログインフローの使い方|
 
 ### 自動起動フロー
 |フロー名|フローから学べる内容|
