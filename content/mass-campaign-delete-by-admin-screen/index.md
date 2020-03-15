@@ -14,6 +14,8 @@ draft: false
 
 ![](formula_global_variable1.png)
 
+注: システム管理者プロファイルの名称は、組織やユーザの言語が英語の場合 `System Administrator` となります。必要に応じてフローまたは言語を変更してください。
+
 ![](formula_global_variable2.png)
 
 数式で利用可能なグローバル変数については、実際にフローの設定画面内でリソースを参照するか、[Salesforce Help - フローのリソース: グローバル変数](https://help.salesforce.com/articleView?id=flow_ref_resources_global_variables.htm&type=5) を参照してください。項目については、標準オブジェクトのリファレンス ([Profile](https://developer.salesforce.com/docs/atlas.ja-jp.object_reference.meta/object_reference/sforce_api_objects_profile.htm), [User](https://developer.salesforce.com/docs/atlas.ja-jp.object_reference.meta/object_reference/sforce_api_objects_user.htm), [UserRole](https://developer.salesforce.com/docs/atlas.ja-jp.object_reference.meta/object_reference/sforce_api_objects_role.htm)) を参照してください。
