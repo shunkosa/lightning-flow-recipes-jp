@@ -1,4 +1,6 @@
 # Lightning Flow Recipes
+![github pages](https://github.com/shunkosa/lightning-flow-recipes-jp/workflows/github%20pages/badge.svg)
+
 **Webサイトができました🎉 [https://shunkosa.github.io/lightning-flow-recipes-jp/](https://shunkosa.github.io/lightning-flow-recipes-jp/)**
 
 ![](content/image.png)
