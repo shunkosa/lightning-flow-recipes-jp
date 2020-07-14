@@ -1,30 +1,25 @@
 baseURL = "https://shunkosa.github.io/lightning-flow-recipes-jp/"
 languageCode = "ja"
+defaultContentLanguage = "ja"
 title = "Lightning Flow Recipes"
 theme = "cayman-hugo-theme"
+
+[languages]
+[languages.ja]
+  languageName = 'Japanese'
+  contentDir = 'content'
+  weight = 1
 
 [params]
   # Header text, can be markdown
   project_name = "Lightning Flow Recipes"
   project_tagline = "インストールして編集可能な Lightning フローのパッケージです⚡️🛠"
-  header_background_color = "#005fb2"
-  header_background_color_secondary = "#1589ee"
-  section_headings_color = "#54698d"
-  body_link_color = "#0366d6"
+  BookMenuBundle = '/menu'
 
 [menu]
-  [[menu.nav]]
-    name = "Home"
-    url = "/"
-    weight = 1
-  [[menu.nav]]
-    name = "Release Note"
-    url = "/changelog"
-    weight = 2
-  [[menu.nav]]
-    name = "View on GitHub"
-    url = "https://github.com/shunkosa/lightning-flow-recipes-jp/"
-    weight = 3
+  [[menu.after]]
+  name = "Github"
+  url = "https://github.com/shunkosa/lightning-flow-recipes-jp/"
 
 [markup.goldmark.renderer]
   unsafe = true
