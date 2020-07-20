@@ -2,7 +2,7 @@ baseURL = "https://shunkosa.github.io/lightning-flow-recipes-jp/"
 languageCode = "jp"
 defaultContentLanguage = "jp"
 title = "Lightning Flow Recipes"
-theme = "cayman-hugo-theme"
+theme = "book"
 
 [languages]
 [languages.jp]
