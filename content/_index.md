@@ -8,12 +8,12 @@ draft: false
 ![](image.png)
 
 ## 📦使用方法
-以下からパッケージをインストールしてください。(ver 0.6 / Summer '20)
+以下からパッケージをインストールしてください。(ver 0.7 / Summer '20)
 
-* [Sandbox 組織](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tf4000004MhniAAC) 
-* [Developer Edition 組織](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tf4000004MhniAAC)
+* [Sandbox 組織](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tf4000004MhnnAAC) 
+* [Developer Edition 組織](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tf4000004MhnnAAC)
 * Trailhead Playground 組織
-    * パッケージ ID として、`04tf4000004MhniAAC` を使用してください。
+    * パッケージ ID として、`04tf4000004MhnnAAC` を使用してください。
 
 ## 📚レシピ
 
