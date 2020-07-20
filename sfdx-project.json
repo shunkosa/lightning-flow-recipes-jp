@@ -4,13 +4,13 @@
             "path": "force-app",
             "default": true,
             "package": "lightning-flow-recipes",
-            "versionName": "ver 0.5",
-            "versionNumber": "0.5.0.NEXT"
+            "versionName": "ver 0.6",
+            "versionNumber": "0.6.0.NEXT"
         }
     ],
     "namespace": "",
     "sfdcLoginUrl": "https://login.salesforce.com",
-    "sourceApiVersion": "48.0",
+    "sourceApiVersion": "49.0",
     "packageAliases": {
         "lightning-flow-recipes": "0Hof40000004CFkCAM",
         "lightning-flow-recipes@0.1.0-1": "04tf4000004EyqsAAC",
@@ -19,6 +19,7 @@
         "lightning-flow-recipes@0.3.1-1": "04tf4000004EywcAAC",
         "lightning-flow-recipes@0.4.0-1": "04tf4000004EywhAAC",
         "lightning-flow-recipes@0.4.1-1": "04tf4000004EywmAAC",
-        "lightning-flow-recipes@0.5.0-1": "04tf4000004Ez6YAAS"
+        "lightning-flow-recipes@0.5.0-1": "04tf4000004Ez6YAAS",
+        "lightning-flow-recipes@0.6.0-1": "04tf4000004MhniAAC"
     }
 }

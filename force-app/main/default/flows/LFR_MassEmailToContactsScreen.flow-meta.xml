@@ -3,7 +3,7 @@
     <actionCalls>
         <name>sendEmail</name>
         <label>メールを送信</label>
-        <locationX>810</locationX>
+        <locationX>944</locationX>
         <locationY>275</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
@@ -11,15 +11,15 @@
             <targetReference>loop_Contacts</targetReference>
         </connector>
         <inputParameters>
-            <name>emailSubject</name>
+            <name>emailAddresses</name>
             <value>
-                <stringValue>[Flow Recipes] こんにちは！</stringValue>
+                <elementReference>loop_Contacts.Email</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
-            <name>emailAddresses</name>
+            <name>emailSubject</name>
             <value>
-                <elementReference>var_currentContact.Email</elementReference>
+                <stringValue>[Flow Recipes] こんにちは！</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
@@ -33,7 +33,7 @@
         <description>取得した取引先の業種が空かどうかを判定します。</description>
         <name>decision_Industry</name>
         <label>業種のある取引先を絞り込み</label>
-        <locationX>41</locationX>
+        <locationX>175</locationX>
         <locationY>334</locationY>
         <defaultConnector>
             <targetReference>screen_Invalid</targetReference>
@@ -59,11 +59,11 @@
     <interviewLabel>[Flow Recipes] 取引先から取引先責任者へ一括メール送信する画面フロー {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[Flow Recipes] 取引先から取引先責任者へ一括メール送信する画面</label>
     <loops>
+        <description>レコードの取得要素で取得した、複数の取引先責任者レコード(=コレクション変数)からレコードを1つずつ取り出して処理を行います。</description>
         <name>loop_Contacts</name>
         <label>取引先責任者で繰り返し</label>
-        <locationX>632</locationX>
+        <locationX>766</locationX>
         <locationY>112</locationY>
-        <assignNextValueToReference>var_currentContact</assignNextValueToReference>
         <collectionReference>get_Contacts</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -87,7 +87,7 @@
         <description>現在開いている取引先のレコードを取得します。</description>
         <name>get_Account</name>
         <label>取引先を取得</label>
-        <locationX>49</locationX>
+        <locationX>183</locationX>
         <locationY>181</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -108,7 +108,7 @@
         <description>メールアドレスが空でない取引先責任者を取得します。</description>
         <name>get_Contacts</name>
         <label>取引先責任者を取得</label>
-        <locationX>442</locationX>
+        <locationX>576</locationX>
         <locationY>112</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -135,7 +135,7 @@
     <screens>
         <name>screen_Confirmation</name>
         <label>確認画面</label>
-        <locationX>255</locationX>
+        <locationX>389</locationX>
         <locationY>112</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -154,7 +154,7 @@
     <screens>
         <name>screen_Invalid</name>
         <label>送信できません</label>
-        <locationX>245</locationX>
+        <locationX>379</locationX>
         <locationY>462</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -178,8 +178,7 @@
     <textTemplates>
         <description>メールの本文です。</description>
         <name>emailBody</name>
-        <text>{!var_currentContact.LastName} さん
-こんにちは！フローレシピのインストールありがとうございます！</text>
+        <text>&lt;p&gt;{!loop_Contacts.LastName} さん&lt;/p&gt;&lt;p&gt;こんにちは！フローレシピのインストールありがとうございます！&lt;/p&gt;</text>
     </textTemplates>
     <variables>
         <name>recordId</name>
@@ -187,14 +186,5 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-    </variables>
-    <variables>
-        <description>ループ内変数として使用する、1件の取引先責任者レコードを表す変数です。</description>
-        <name>var_currentContact</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>Contact</objectType>
     </variables>
 </Flow>

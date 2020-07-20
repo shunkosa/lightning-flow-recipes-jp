@@ -3,7 +3,7 @@
     <actionCalls>
         <name>postToChatter</name>
         <label>Chatter投稿</label>
-        <locationX>382</locationX>
+        <locationX>554</locationX>
         <locationY>295</locationY>
         <actionName>chatterPost</actionName>
         <actionType>chatterPost</actionType>
@@ -11,15 +11,15 @@
             <targetReference>loop_Opportunities</targetReference>
         </connector>
         <inputParameters>
-            <name>subjectNameOrId</name>
+            <name>text</name>
             <value>
-                <elementReference>var_currentOpportunity.Id</elementReference>
+                <stringValue>@[{!loop_Opportunities.OwnerId}] 完了予定日が過ぎています！</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
-            <name>text</name>
+            <name>subjectNameOrId</name>
             <value>
-                <stringValue>@[{!var_currentOpportunity.OwnerId}] 完了予定日が過ぎています！</stringValue>
+                <elementReference>loop_Opportunities.Id</elementReference>
             </value>
         </inputParameters>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -35,9 +35,8 @@
     <loops>
         <name>loop_Opportunities</name>
         <label>取得した商談を繰り返し</label>
-        <locationX>380</locationX>
+        <locationX>552</locationX>
         <locationY>49</locationY>
-        <assignNextValueToReference>var_currentOpportunity</assignNextValueToReference>
         <collectionReference>get_Opportunity</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -60,7 +59,7 @@
     <recordLookups>
         <name>get_Opportunity</name>
         <label>商談を取得</label>
-        <locationX>217</locationX>
+        <locationX>389</locationX>
         <locationY>49</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -98,13 +97,4 @@
         <triggerType>Scheduled</triggerType>
     </start>
     <status>Draft</status>
-    <variables>
-        <description>ループ内変数です。</description>
-        <name>var_currentOpportunity</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>Opportunity</objectType>
-    </variables>
 </Flow>
