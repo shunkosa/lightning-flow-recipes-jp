@@ -3,31 +3,31 @@
     <assignments>
         <name>assign_LeadFields</name>
         <label>項目値の割り当て</label>
-        <locationX>534</locationX>
-        <locationY>50</locationY>
+        <locationX>658</locationX>
+        <locationY>69</locationY>
         <assignmentItems>
-            <assignToReference>get_Lead.LastName</assignToReference>
+            <assignToReference>recordId.LastName</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>input_LeadLastName</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>get_Lead.FirstName</assignToReference>
+            <assignToReference>recordId.FirstName</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>input_LeadFirstName</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>get_Lead.Rating</assignToReference>
+            <assignToReference>recordId.Rating</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>input_LeadRating</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>get_Lead.Company</assignToReference>
+            <assignToReference>recordId.Company</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>input_LeadCompany</elementReference>
@@ -42,7 +42,7 @@
         <choiceText>{!formula_CurrentLeadRatingLabel}</choiceText>
         <dataType>String</dataType>
         <value>
-            <elementReference>get_Lead.Rating</elementReference>
+            <elementReference>recordId.Rating</elementReference>
         </value>
     </choices>
     <description>リードを更新するシンプルな画面フローです。開いているレコードのIDを取得する方法や、レコード変数を用いてレコードを更新する方法、選択リスト値のデフォルト値として現在の値を取得する方法を理解します。</description>
@@ -61,19 +61,20 @@
             <field>Value</field>
             <operator>NotEqualTo</operator>
             <value>
-                <elementReference>get_Lead.Rating</elementReference>
+                <elementReference>recordId.Rating</elementReference>
             </value>
         </filters>
         <object>PicklistValueInfo</object>
         <valueField>Value</valueField>
     </dynamicChoiceSets>
     <formulas>
+        <description>現在のリードの[評価]項目の表示ラベルを求める数式項目です。数式項目では選択リスト値の表示ラベルを直接取得できないため、CASE文で選択リストのAPI名を表示ラベルに変換しています。組織の内容に合わせて変更してください。</description>
         <name>formula_CurrentLeadRatingLabel</name>
         <dataType>String</dataType>
-        <expression>CASE(TEXT({!get_Lead.Rating}),
-&#39;Hot&#39;,&#39;Hot&#39;,
-&#39;Warm&#39;,&#39;Warm&#39;,
-&#39;Cold&#39;,&#39;Cold&#39;,&#39;&#39;)</expression>
+        <expression>CASE(TEXT({!recordId.Rating}),
+&apos;Hot&apos;,&apos;Hot&apos;,
+&apos;Warm&apos;,&apos;Warm&apos;,
+&apos;Cold&apos;,&apos;Cold&apos;,&apos;なし&apos;)</expression>
     </formulas>
     <interviewLabel>リードの更新 {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[Flow Recipes] リードの更新画面</label>
@@ -90,44 +91,18 @@
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
-    <recordLookups>
-        <name>get_Lead</name>
-        <label>リードの取得</label>
-        <locationX>225</locationX>
-        <locationY>50</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>screen_LeadUpdate</targetReference>
-        </connector>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>recordId</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Lead</object>
-        <queriedFields>Id</queriedFields>
-        <queriedFields>Rating</queriedFields>
-        <queriedFields>FirstName</queriedFields>
-        <queriedFields>LastName</queriedFields>
-        <queriedFields>Email</queriedFields>
-        <queriedFields>Company</queriedFields>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
     <recordUpdates>
         <name>update_Lead</name>
         <label>リードの更新</label>
-        <locationX>682</locationX>
-        <locationY>50</locationY>
-        <inputReference>get_Lead</inputReference>
+        <locationX>834</locationX>
+        <locationY>69</locationY>
+        <inputReference>recordId</inputReference>
     </recordUpdates>
     <screens>
         <name>screen_LeadUpdate</name>
         <label>リードの更新画面</label>
-        <locationX>379</locationX>
-        <locationY>50</locationY>
+        <locationX>482</locationX>
+        <locationY>69</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -138,7 +113,7 @@
             <name>input_LeadLastName</name>
             <dataType>String</dataType>
             <defaultValue>
-                <elementReference>get_Lead.LastName</elementReference>
+                <elementReference>recordId.LastName</elementReference>
             </defaultValue>
             <fieldText>姓</fieldText>
             <fieldType>InputField</fieldType>
@@ -148,7 +123,7 @@
             <name>input_LeadFirstName</name>
             <dataType>String</dataType>
             <defaultValue>
-                <elementReference>get_Lead.FirstName</elementReference>
+                <elementReference>recordId.FirstName</elementReference>
             </defaultValue>
             <fieldText>名</fieldText>
             <fieldType>InputField</fieldType>
@@ -158,7 +133,7 @@
             <name>input_LeadCompany</name>
             <dataType>String</dataType>
             <defaultValue>
-                <elementReference>get_Lead.Company</elementReference>
+                <elementReference>recordId.Company</elementReference>
             </defaultValue>
             <fieldText>会社</fieldText>
             <fieldType>InputField</fieldType>
@@ -181,15 +156,16 @@
         <locationX>50</locationX>
         <locationY>50</locationY>
         <connector>
-            <targetReference>get_Lead</targetReference>
+            <targetReference>screen_LeadUpdate</targetReference>
         </connector>
     </start>
     <status>Draft</status>
     <variables>
         <name>recordId</name>
-        <dataType>String</dataType>
+        <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
+        <objectType>Lead</objectType>
     </variables>
 </Flow>

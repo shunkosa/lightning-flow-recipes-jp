@@ -4,8 +4,8 @@
             "path": "force-app",
             "default": true,
             "package": "lightning-flow-recipes",
-            "versionName": "ver 0.6",
-            "versionNumber": "0.6.0.NEXT"
+            "versionName": "ver 0.7 (Summer '20)",
+            "versionNumber": "0.7.0.NEXT"
         }
     ],
     "namespace": "",
@@ -20,6 +20,7 @@
         "lightning-flow-recipes@0.4.0-1": "04tf4000004EywhAAC",
         "lightning-flow-recipes@0.4.1-1": "04tf4000004EywmAAC",
         "lightning-flow-recipes@0.5.0-1": "04tf4000004Ez6YAAS",
-        "lightning-flow-recipes@0.6.0-1": "04tf4000004MhniAAC"
+        "lightning-flow-recipes@0.6.0-1": "04tf4000004MhniAAC",
+        "lightning-flow-recipes@0.7.0-1": "04tf4000004MhnnAAC"
     }
 }
