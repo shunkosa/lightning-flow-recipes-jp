@@ -19,8 +19,8 @@
     <recordCreates>
         <name>TaskCreate</name>
         <label>ToDoの作成</label>
-        <locationX>388</locationX>
-        <locationY>50</locationY>
+        <locationX>370</locationX>
+        <locationY>190</locationY>
         <connector>
             <targetReference>FileUploadScreen</targetReference>
         </connector>
@@ -77,8 +77,8 @@
     <screens>
         <name>TaskCreateScreen</name>
         <label>ToDoの登録</label>
-        <locationX>222</locationX>
-        <locationY>50</locationY>
+        <locationX>176</locationX>
+        <locationY>190</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
