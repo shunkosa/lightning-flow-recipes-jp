@@ -19,8 +19,8 @@
     <recordCreates>
         <name>create_Account</name>
         <label>取引先の作成</label>
-        <locationX>332</locationX>
-        <locationY>50</locationY>
+        <locationX>388</locationX>
+        <locationY>208</locationY>
         <inputAssignments>
             <field>AnnualRevenue</field>
             <value>
@@ -45,8 +45,8 @@
     <screens>
         <name>screen_AccountCreate</name>
         <label>取引先の新規作成</label>
-        <locationX>200</locationX>
-        <locationY>50</locationY>
+        <locationX>267</locationX>
+        <locationY>208</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
