@@ -33,8 +33,8 @@
         <description>取得した取引先の業種が空かどうかを判定します。</description>
         <name>decision_Industry</name>
         <label>業種のある取引先を絞り込み</label>
-        <locationX>175</locationX>
-        <locationY>334</locationY>
+        <locationX>167</locationX>
+        <locationY>331</locationY>
         <defaultConnector>
             <targetReference>screen_Invalid</targetReference>
         </defaultConnector>
@@ -43,7 +43,7 @@
             <name>decisionResult_IndustryExists</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>get_Account.Industry</leftValueReference>
+                <leftValueReference>recordId.Industry</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -84,27 +84,6 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordLookups>
-        <description>現在開いている取引先のレコードを取得します。</description>
-        <name>get_Account</name>
-        <label>取引先を取得</label>
-        <locationX>183</locationX>
-        <locationY>181</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>decision_Industry</targetReference>
-        </connector>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>recordId</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Account</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
         <description>メールアドレスが空でない取引先責任者を取得します。</description>
         <name>get_Contacts</name>
         <label>取引先責任者を取得</label>
@@ -118,7 +97,7 @@
             <field>AccountId</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>recordId</elementReference>
+                <elementReference>recordId.Id</elementReference>
             </value>
         </filters>
         <filters>
@@ -171,7 +150,7 @@
         <locationX>49</locationX>
         <locationY>49</locationY>
         <connector>
-            <targetReference>get_Account</targetReference>
+            <targetReference>decision_Industry</targetReference>
         </connector>
     </start>
     <status>Draft</status>
@@ -182,9 +161,10 @@
     </textTemplates>
     <variables>
         <name>recordId</name>
-        <dataType>String</dataType>
+        <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
+        <objectType>Account</objectType>
     </variables>
 </Flow>
