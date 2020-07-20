@@ -4,19 +4,19 @@ date: 2020-02-28
 draft: false
 ---
 
-## ⚡️Lightning Flow Recipe とは
+## ⚡️Lightning Flow Recipes とは
 
 インストールしてすぐに使用できる Lightning フローのサンプル集です。インストールしたフローは、編集または別名で保存することができます。フローが初めての方は、先に [Trailhead の Flow Builder を使用したフローの作成](https://trailhead.salesforce.com/ja/content/learn/trails/build-flows-with-flow-builder) に取り組んでみてください。
 
 ![](image.png)
 
 ## 📦使用方法
-以下からパッケージをインストールしてください。
+以下からパッケージをインストールしてください。(ver 0.6 / Summer '20)
 
-* [Sandbox 組織](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tf4000004Ez6YAAS) 
-* [Developer Edition 組織](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tf4000004Ez6YAAS)
-* 新しい Trailhead Playground 組織
-    * アプリケーションランチャーから、[Playground Starter] アプリケーションを起動し、[パッケージのインストール] タブをクリックします。インストール ID に、`04tf4000004Ez6YAAS` を入力し、[インストール] ボタンをクリックしてください。
+* [Sandbox 組織](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tf4000004MhniAAC) 
+* [Developer Edition 組織](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tf4000004MhniAAC)
+* Trailhead Playground 組織
+    * パッケージ ID として、`04tf4000004MhniAAC` を使用してください。
 
 ## 📚レシピ
 
@@ -34,18 +34,17 @@ draft: false
 |[システム管理者だけが自分が作成したキャンペーンを一括削除できる画面](mass-campaign-delete-by-admin-screen)|・フローを実行しているユーザ情報の取得<br>・レコードの削除|
 |[ログイン直後にお知らせメッセージを表示](basic-login-flow)|・ログインフローの使い方|
 
-### 自動起動フロー
+### レコード変更フロー
 |フロー名|フローから学べる内容|
 |---|---|
 |[取引先の請求先住所を納入先住所に自動コピー](sync-account-billing-address-to-shipping-address)|・保存前フローの使い方/ユースケース|
-|[Web-to-ケース/メール-to-ケースで取引先責任者を自動作成](create-contact-update-case-from-web-or-email)|・プロセスからフローの呼び出し|
-|[毎朝9時に完了予定日を過ぎた商談の所有者に Chatter でメンションするスケジュールフロー](scheduled-opportunity-chatter-reminder)|・フローのスケジュール実行<br>・Chatter通知|
+|[Web-to-ケース/メール-to-ケースで取引先責任者を自動作成](create-contact-update-case-from-web-or-email)|・保存後フロー|
+|[特定の取引先のケースを一括削除する](delete-cases-on-account)|・保存後フロー<br>・レコードの削除|
 
-## 🧐補足
-* [Help に記載のベストプラクティス](https://help.salesforce.com/articleView?id=flow_prep_bestpractices.htm&type=5) に可能な限り従ってください。
-* 実際にフローを業務で使用する際は、各要素の API 参照名に命名規則を定めましょう。旧 Cloud Flow Designer (昔のフロービルダー) から Lightning フロービルダーに変わり、要素の検索はしやすくなりましたが、一定のルールで要素を作成しているとメンテナンスがしやすいフローになります。
-* 実行コンテキスト
-* デバッグ
+### スケジュール済みフロー
+|フロー名|フローから学べる内容|
+|---|---|
+|[毎朝9時に完了予定日を過ぎた商談の所有者に Chatter でメンションするスケジュールフロー](scheduled-opportunity-chatter-reminder)|・フローのスケジュール実行<br>・Chatter通知|
 
 ## 🙏🏻フィードバック
 ご質問、ご要望、または不具合の報告などありましたら [Issue](https://github.com/shunkosa/lightning-flow-recipes-jp/issues/new) や [Twitter](https://www.twitter.com/shunkosa) からお知らせください。また、ご自身の考えたフローをパッケージに加えたい、というコントリビューションも大歓迎です。ぜひご気軽にお問合せください。
