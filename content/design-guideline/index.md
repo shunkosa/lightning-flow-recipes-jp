@@ -1,10 +1,14 @@
-# 実装時に気をつけると良いこと
+---
+title: "実装時に気をつけると良いこと"
+date: 2020-07-20
+draft: false
+---
 [Help に記載のベストプラクティス](https://help.salesforce.com/articleView?id=flow_prep_bestpractices.htm&type=5) に可能な限り従ってください。
 
 ## 命名規則
 各要素の API 名には命名規則を設けることで保守性が高まります。このレシピでは**一例として**以下の命名規則を定めています。また、各要素の [説明] 欄には可能な限りその目的を入力しておきましょう。
 
-|要素|命名規則|API名の例|
+|要素|命名規則の例|API名の例|
 |-|-|-|
 |画面|`screen_` で始める|`screen_LeadUpdate`|
 |画面の入力要素| `input_` で始める | `input_FirstName` |
