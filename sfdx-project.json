@@ -10,7 +10,7 @@
     ],
     "namespace": "",
     "sfdcLoginUrl": "https://login.salesforce.com",
-    "sourceApiVersion": "49.0",
+    "sourceApiVersion": "50.0",
     "packageAliases": {
         "lightning-flow-recipes": "0Hof40000004CFkCAM",
         "lightning-flow-recipes@0.1.0-1": "04tf4000004EyqsAAC",
