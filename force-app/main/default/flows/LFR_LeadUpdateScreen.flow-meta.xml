@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
     <assignments>
         <name>assign_LeadFields</name>
         <label>項目値の割り当て</label>
-        <locationX>658</locationX>
-        <locationY>69</locationY>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
         <assignmentItems>
             <assignToReference>recordId.LastName</assignToReference>
             <operator>Assign</operator>
@@ -50,6 +51,7 @@
         <name>options_LeadRatingWithoutCurrentSelection</name>
         <dataType>String</dataType>
         <displayField>Label</displayField>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>EntityParticleId</field>
             <operator>EqualTo</operator>
@@ -85,6 +87,12 @@
         </value>
     </processMetadataValues>
     <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
         <name>OriginBuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
@@ -94,15 +102,15 @@
     <recordUpdates>
         <name>update_Lead</name>
         <label>リードの更新</label>
-        <locationX>834</locationX>
-        <locationY>69</locationY>
+        <locationX>176</locationX>
+        <locationY>398</locationY>
         <inputReference>recordId</inputReference>
     </recordUpdates>
     <screens>
         <name>screen_LeadUpdate</name>
         <label>リードの更新画面</label>
-        <locationX>482</locationX>
-        <locationY>69</locationY>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -154,7 +162,7 @@
     </screens>
     <start>
         <locationX>50</locationX>
-        <locationY>50</locationY>
+        <locationY>0</locationY>
         <connector>
             <targetReference>screen_LeadUpdate</targetReference>
         </connector>

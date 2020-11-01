@@ -3,8 +3,8 @@
     <actionCalls>
         <name>postToChatter</name>
         <label>Chatter投稿</label>
-        <locationX>554</locationX>
-        <locationY>295</locationY>
+        <locationX>264</locationX>
+        <locationY>516</locationY>
         <actionName>chatterPost</actionName>
         <actionType>chatterPost</actionType>
         <connector>
@@ -24,6 +24,7 @@
         </inputParameters>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
+    <apiVersion>50.0</apiVersion>
     <formulas>
         <description>本日の日付を返す数式です。</description>
         <name>formula_Today</name>
@@ -35,8 +36,8 @@
     <loops>
         <name>loop_Opportunities</name>
         <label>取得した商談を繰り返し</label>
-        <locationX>552</locationX>
-        <locationY>49</locationY>
+        <locationX>176</locationX>
+        <locationY>396</locationY>
         <collectionReference>get_Opportunity</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -50,6 +51,12 @@
         </value>
     </processMetadataValues>
     <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
         <name>OriginBuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
@@ -59,12 +66,13 @@
     <recordLookups>
         <name>get_Opportunity</name>
         <label>商談を取得</label>
-        <locationX>389</locationX>
-        <locationY>49</locationY>
+        <locationX>176</locationX>
+        <locationY>276</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>loop_Opportunities</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>CloseDate</field>
             <operator>LessThan</operator>
@@ -84,8 +92,8 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>49</locationX>
-        <locationY>49</locationY>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>get_Opportunity</targetReference>
         </connector>

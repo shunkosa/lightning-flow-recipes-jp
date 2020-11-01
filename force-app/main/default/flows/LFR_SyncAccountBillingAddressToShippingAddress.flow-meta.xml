@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
     <assignments>
         <name>assign_AccountBillingAddressToShippingAddress</name>
         <label>請求先住所を納入先住所にコピー</label>
-        <locationX>247</locationX>
-        <locationY>60</locationY>
+        <locationX>176</locationX>
+        <locationY>253</locationY>
         <assignmentItems>
             <assignToReference>$Record.ShippingCountry</assignToReference>
             <operator>Assign</operator>
@@ -50,6 +51,12 @@
         </value>
     </processMetadataValues>
     <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
         <name>OriginBuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
@@ -58,7 +65,7 @@
     <processType>AutoLaunchedFlow</processType>
     <start>
         <locationX>50</locationX>
-        <locationY>49</locationY>
+        <locationY>0</locationY>
         <connector>
             <targetReference>assign_AccountBillingAddressToShippingAddress</targetReference>
         </connector>

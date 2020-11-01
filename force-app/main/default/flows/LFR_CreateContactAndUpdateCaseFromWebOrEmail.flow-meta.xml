@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
     <assignments>
         <name>assign_NumOfContacts</name>
         <label>検索結果の件数を取得</label>
-        <locationX>748</locationX>
-        <locationY>273</locationY>
+        <locationX>182</locationX>
+        <locationY>493</locationY>
         <assignmentItems>
             <assignToReference>var_NumOfContacts</assignToReference>
             <operator>AssignCount</operator>
@@ -20,8 +21,8 @@
         <description>Web-to-またはメール-to-ケースで作成されたケースかどうかを判定します。様々な方法がありますが、ここでは、SuppliedEmail項目に値が入っているかどうかで判定しています。</description>
         <name>decision_CaseFromWebOrEmail</name>
         <label>Webまたはメールのケース</label>
-        <locationX>369</locationX>
-        <locationY>277</locationY>
+        <locationX>336</locationX>
+        <locationY>253</locationY>
         <defaultConnectorLabel>デフォルトの結果</defaultConnectorLabel>
         <rules>
             <name>Web_Or_Email</name>
@@ -49,8 +50,8 @@
     <decisions>
         <name>decision_NumOfContacts</name>
         <label>取引先責任者の件数</label>
-        <locationX>882</locationX>
-        <locationY>275</locationY>
+        <locationX>182</locationX>
+        <locationY>613</locationY>
         <defaultConnectorLabel>デフォルトの結果</defaultConnectorLabel>
         <rules>
             <name>decisionResult_Zero</name>
@@ -78,6 +79,12 @@
         </value>
     </processMetadataValues>
     <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
         <name>OriginBuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
@@ -87,8 +94,8 @@
     <recordCreates>
         <name>create_Contact</name>
         <label>取引先責任者の新規作成</label>
-        <locationX>1071</locationX>
-        <locationY>273</locationY>
+        <locationX>50</locationX>
+        <locationY>733</locationY>
         <connector>
             <targetReference>update_Case</targetReference>
         </connector>
@@ -110,12 +117,13 @@
     <recordLookups>
         <name>get_ContactsByEmail</name>
         <label>メールアドレスで取引先責任者を検索</label>
-        <locationX>576</locationX>
-        <locationY>272</locationY>
+        <locationX>182</locationX>
+        <locationY>373</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>assign_NumOfContacts</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Email</field>
             <operator>EqualTo</operator>
@@ -130,8 +138,9 @@
     <recordUpdates>
         <name>update_Case</name>
         <label>ケースと取引先責任者の紐付けを更新</label>
-        <locationX>1072</locationX>
-        <locationY>460</locationY>
+        <locationX>50</locationX>
+        <locationY>853</locationY>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -148,8 +157,8 @@
         <object>Case</object>
     </recordUpdates>
     <start>
-        <locationX>49</locationX>
-        <locationY>49</locationY>
+        <locationX>210</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>decision_CaseFromWebOrEmail</targetReference>
         </connector>

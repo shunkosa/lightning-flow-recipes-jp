@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
     <assignments>
         <name>assign_AddContactToList</name>
         <label>リストに取引先責任者を追加</label>
@@ -124,6 +125,7 @@
         <name>options_ContactRecords</name>
         <dataType>String</dataType>
         <displayField>Name</displayField>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>FirstName</field>
             <operator>Contains</operator>
@@ -146,17 +148,17 @@
         <dataType>String</dataType>
         <expression>IF(ISBLANK({!var_SelectedContactIds}),
     null,
-    IF(NOT(CONTAINS({!var_SelectedContactIds}, &#39;; &#39;)),
+    IF(NOT(CONTAINS({!var_SelectedContactIds}, &apos;; &apos;)),
         {!var_SelectedContactIds},
-        LEFT({!var_SelectedContactIds}, FIND(&#39;;&#39;,{!var_SelectedContactIds})-1)
+        LEFT({!var_SelectedContactIds}, FIND(&apos;;&apos;,{!var_SelectedContactIds})-1)
     )
 )</expression>
     </formulas>
     <formulas>
         <name>formula_RemainingPicklistValues</name>
         <dataType>String</dataType>
-        <expression>IF( NOT(CONTAINS( {!var_SelectedContactIds} , &#39;; &#39;)), null,
-RIGHT( {!var_SelectedContactIds} , LEN( {!var_SelectedContactIds} ) - FIND(&#39;;&#39;, {!var_SelectedContactIds}) -1 ))</expression>
+        <expression>IF( NOT(CONTAINS( {!var_SelectedContactIds} , &apos;; &apos;)), null,
+RIGHT( {!var_SelectedContactIds} , LEN( {!var_SelectedContactIds} ) - FIND(&apos;;&apos;, {!var_SelectedContactIds}) -1 ))</expression>
     </formulas>
     <interviewLabel>[Flow Recipes] 取引先責任者の検索・更新画面 {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[Flow Recipes] 取引先責任者の検索・更新画面</label>
@@ -164,6 +166,12 @@ RIGHT( {!var_SelectedContactIds} , LEN( {!var_SelectedContactIds} ) - FIND(&#39;
         <name>BuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -183,6 +191,7 @@ RIGHT( {!var_SelectedContactIds} , LEN( {!var_SelectedContactIds} ) - FIND(&#39;
         <connector>
             <targetReference>assign_NumOfContacts</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>FirstName</field>
             <operator>Contains</operator>
@@ -296,7 +305,7 @@ RIGHT( {!var_SelectedContactIds} , LEN( {!var_SelectedContactIds} ) - FIND(&#39;
             <isRequired>true</isRequired>
             <validationRule>
                 <errorMessage>&lt;p&gt;姓は全角カタカナで入力してください。&lt;/p&gt;</errorMessage>
-                <formulaExpression>REGEX({!input_ContactLastName}, &#39;^([ァ-ン]|ー)+$&#39;)</formulaExpression>
+                <formulaExpression>REGEX({!input_ContactLastName}, &apos;^([ァ-ン]|ー)+$&apos;)</formulaExpression>
             </validationRule>
         </fields>
         <fields>
@@ -307,7 +316,7 @@ RIGHT( {!var_SelectedContactIds} , LEN( {!var_SelectedContactIds} ) - FIND(&#39;
             <isRequired>false</isRequired>
             <validationRule>
                 <errorMessage>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;名は全角カタカナで入力してください。&lt;/span&gt;&lt;/p&gt;</errorMessage>
-                <formulaExpression>REGEX({!input_ContactFirstName}, &#39;^([ァ-ン]|ー)+$&#39;)</formulaExpression>
+                <formulaExpression>REGEX({!input_ContactFirstName}, &apos;^([ァ-ン]|ー)+$&apos;)</formulaExpression>
             </validationRule>
         </fields>
         <showFooter>true</showFooter>
