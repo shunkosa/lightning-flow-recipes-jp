@@ -33,17 +33,20 @@ draft: false
 |[システム管理者だけが自分が作成したキャンペーンを一括削除できる画面](mass-campaign-delete-by-admin-screen)|・フローを実行しているユーザ情報の取得<br>・プロファイルで分岐する画面<br>・レコードの削除|
 |[ログイン直後にお知らせメッセージを表示](basic-login-flow)|・ログインフローの使い方|
 
-### レコード変更フロー
+### レコードトリガフロー
 |フロー名|フローから学べる内容|
 |---|---|
 |[取引先の請求先住所を納入先住所に自動コピー](sync-account-billing-address-to-shipping-address)|・保存前フローの使い方/ユースケース|
+|[ユーザ登録時にメールのBCC設定をオフにする]()|・保存前フロー
 |[Web-to-ケース/メール-to-ケースで取引先責任者を自動作成](create-contact-update-case-from-web-or-email)|・保存後フロー|
-|[特定の取引先のケースを一括削除する](delete-cases-on-account)|・保存後フロー<br>・レコードの削除|
+|[商談成立時に Chatter 投稿とフォローアップ ToDo を作成](big-deal-chatter-alerts)|・保存後フロー<br>・子レコードの作成|
+|[リストビューからリードを一括削除する](mass-delete-leads)|・一括クイックアクションと保存後フローの組み合わせ<br>・レコードの削除|
 
 ### スケジュール済みフロー
 |フロー名|フローから学べる内容|
 |---|---|
 |[毎朝9時に完了予定日を過ぎた商談の所有者に Chatter でメンションするスケジュールフロー](scheduled-opportunity-chatter-reminder)|・フローのスケジュール実行<br>・Chatter通知|
+|[30日以上商談フェーズの変更がない場合、所有者に Chatter でメンションするスケジュールフロー](opportunity-stage-duration-reminder)|・フローのスケジュール実行<br>・Chatter通知
 
 ## 🙏🏻フィードバック
 ご質問、ご要望、または不具合の報告などありましたら [Issue](https://github.com/shunkosa/lightning-flow-recipes-jp/issues/new) や [Twitter](https://www.twitter.com/shunkosa) からお知らせください。また、ご自身の考えたフローをパッケージに加えたい、というコントリビューションも大歓迎です。ぜひご気軽にお問合せください。
