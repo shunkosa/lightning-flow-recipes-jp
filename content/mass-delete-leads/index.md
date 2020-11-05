@@ -11,7 +11,8 @@ draft: false
 ## 使い方
 1. フローを有効化します。
 2. [オブジェクトマネージャ] > [リード] > [Salesforce Clasic の検索レイアウト] で、[リストビュー] を編集し、[Lightning Experience でのリストビューアクション] セクションで、[リードの削除] を追加します。
-![](mass_quick_action_setup.png)
+
+<img src="mass_quick_action_setup.png" width="50%">
 
 3. リストビューから任意のリードをチェックして、[リードの削除] ボタンをクリックします。
 
