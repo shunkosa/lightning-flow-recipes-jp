@@ -36,7 +36,7 @@ draft: false
 |フロー名|フローから学べる内容|
 |---|---|
 |[取引先の請求先住所を納入先住所に自動コピー](sync-account-billing-address-to-shipping-address)|・保存前フローの使い方/ユースケース|
-|[ユーザ登録時にメールの BCC 設定をオフにする](disalbe-user-auto-bcc)|・保存前フロー
+|[ユーザ登録時にメールの BCC 設定をオフにする](disalbe-user-email-auto-bcc)|・保存前フロー
 |[Web-to-ケース/メール-to-ケースで取引先責任者を自動作成](create-contact-update-case-from-web-or-email)|・保存後フロー|
 |[商談成立時に Chatter 投稿とフォローアップ ToDo を作成](big-deal-chatter-alerts)|・保存後フロー<br>・子レコードの作成|
 |[リストビューからリードを一括削除する](mass-delete-leads)|・一括クイックアクションと保存後フローの組み合わせ<br>・レコードの削除|
