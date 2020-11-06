@@ -7,7 +7,7 @@ draft: false
 
 ![](image.png)
 
-## 📦使用方法
+## 📦 使用方法
 以下からパッケージをインストールしてください。(ver 0.7 / Summer '20)
 
 * [Sandbox 組織](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tf4000004MhnnAAC) 
@@ -17,9 +17,9 @@ draft: false
 
 以前のバージョンのパッケージをインストールしたことがあり、フローを有効化している場合は、アップグレード後、新しいフローバージョンとして追加されます。
 
-## 📚レシピ
+## 📚 レシピ
 
-### 画面フロー
+### 🖥 画面フロー
 
 |フロー名|フローから学べる内容|
 |---|---|
@@ -28,25 +28,31 @@ draft: false
 |[取引先と商談を1度に作成する画面](account-opportunity-create-screen)|・リレーションのあるオブジェクトのレコードを作成する|
 |[取引先から取引先責任者に一括メールを送信する画面](mass-email-to-contacts-screen)|・子レコードを取得する (コレクション変数の使い方)<br>・[ループ] の使い方<br>・[決定] の使い方<br>・メール送信アクション|
 |[商談と取引先責任者ロールを1度に作成する画面](opportunity-and-contact-role-create-screen)|・[ルックアップ] の使い方<br>・リレーションのあるオブジェクトのレコードを作成する<br>・固定の大きさのレコードコレクション変数を用いて複数のレコードを作成する|
-|[ToDoとファイルの登録画面](task-with-file-create-screen)|・[ファイルのアップロード] の使い方|
+|[ToDo とファイルの登録画面](task-with-file-create-screen)|・[ファイルのアップロード] の使い方|
 |[取引先責任者の検索・更新画面](contact-search-and-update-screen)|・画面要素に入力チェックを適用する<br>・コレクション変数の大きさ(件数)を取得する<br>・複数選択リスト (チェックボックスグループ) の選択結果をコレクション変数に保存しレコードを更新する|
 |[システム管理者だけが自分が作成したキャンペーンを一括削除できる画面](mass-campaign-delete-by-admin-screen)|・フローを実行しているユーザ情報の取得<br>・プロファイルで分岐する画面<br>・レコードの削除|
-|[ログイン直後にお知らせメッセージを表示](basic-login-flow)|・ログインフローの使い方|
 
-### レコードトリガフロー
+### 💾 レコードトリガフロー
 |フロー名|フローから学べる内容|
 |---|---|
 |[取引先の請求先住所を納入先住所に自動コピー](sync-account-billing-address-to-shipping-address)|・保存前フローの使い方/ユースケース|
-|[ユーザ登録時にメールのBCC設定をオフにする]()|・保存前フロー
+|[ユーザ登録時にメールの BCC 設定をオフにする](disalbe-user-auto-bcc)|・保存前フロー
 |[Web-to-ケース/メール-to-ケースで取引先責任者を自動作成](create-contact-update-case-from-web-or-email)|・保存後フロー|
 |[商談成立時に Chatter 投稿とフォローアップ ToDo を作成](big-deal-chatter-alerts)|・保存後フロー<br>・子レコードの作成|
 |[リストビューからリードを一括削除する](mass-delete-leads)|・一括クイックアクションと保存後フローの組み合わせ<br>・レコードの削除|
 
-### スケジュール済みフロー
+### ⏰ スケジュール済みフロー
 |フロー名|フローから学べる内容|
 |---|---|
-|[毎朝9時に完了予定日を過ぎた商談の所有者に Chatter でメンションするスケジュールフロー](scheduled-opportunity-chatter-reminder)|・フローのスケジュール実行<br>・Chatter通知|
-|[30日以上商談フェーズの変更がない場合、所有者に Chatter でメンションするスケジュールフロー](opportunity-stage-duration-reminder)|・フローのスケジュール実行<br>・Chatter通知
+|[毎朝9時に期日を過ぎた ToDo の所有者にメール通知するスケジュールフロー](scheduled-task-email-reminder)|・フローのスケジュール実行<br>・メール送信|
+|[30日以上商談フェーズの変更がない場合、所有者に Chatter でメンションするスケジュールフロー](opportunity-stage-duration-reminder)|・フローのスケジュール実行<br>・Chatter通知|
 
-## 🙏🏻フィードバック
+### ⚙️ その他フロー
+
+|フロー名|フローから学べる内容|
+|---|---|
+|[ログイン直後にお知らせメッセージを表示](basic-login-flow)|・ログインフローの使い方|
+
+
+## 🙏🏻 フィードバック
 ご質問、ご要望、または不具合の報告などありましたら [Issue](https://github.com/shunkosa/lightning-flow-recipes-jp/issues/new) や [Twitter](https://www.twitter.com/shunkosa) からお知らせください。また、ご自身の考えたフローをパッケージに加えたい、というコントリビューションも大歓迎です。ぜひご気軽にお問合せください。
