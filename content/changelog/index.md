@@ -6,8 +6,8 @@ title: リリースノート
 * 利用できる場合は自動レイアウトを使用し、ランタイムの API バージョンを 50.0 に更新
 * 『[リストビューからリードを一括削除](../mass-delete-leads)』を追加
 * 『[ユーザ登録時の自動BCC設定を解除](../disable-user-email-auto-bcc)』を追加
-* 『[商談成立時に Chatter 投稿とフォローアップ ToDo を作成](big-deal-chatter-alerts)』を追加
-* 『[毎朝9時に完了予定日を過ぎた商談の所有者に Chatter でメンションするスケジュールフロー』を『[毎朝9時に期日を過ぎた ToDo の所有者にメール通知するスケジュールフロー](../scheduled-task-email-reminder/)』に変更
+* 『[商談成立時に Chatter 投稿とフォローアップ ToDo を作成](../big-deal-chatter-alerts)』を追加
+* 『毎朝9時に完了予定日を過ぎた商談の所有者に Chatter でメンションするスケジュールフロー』を『[毎朝9時に期日を過ぎた ToDo の所有者にメール通知するスケジュールフロー](../scheduled-task-email-reminder/)』に変更
 
 ## 0.7.0 - 2020年7月20日
 * Summer '20 から `recordId` 変数がテキストではなくレコード変数として扱えるようになったため、『[リードの更新画面](../lead-update-screen)』と『[取引先から取引先責任者へ一括メール送信する画面](../mass-email-to-contacts-screen)』 の `レコードを取得` 要素を省略

@@ -4,11 +4,11 @@ date: 2020-11-02
 draft: false
 ---
 
-![](disable_user_auto_bcc_screenshot.png)
+![](disable_user_email_auto_bcc_screenshot.png)
 
 ユーザ登録時にメールのBCC設定をオフにするためのレコードトリガフロー(保存前フロー)です。
 
-<img src="my_email_setting.png" witdh="50%">
+<img src="my_email_setting.png" width="50%">
 
 この項目はデフォルトでONになっていますが、このフローを有効化すると、登録時にOFFに設定されます。
 
