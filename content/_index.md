@@ -45,7 +45,6 @@ draft: false
 |フロー名|フローから学べる内容|
 |---|---|
 |[毎朝9時に期日を過ぎた ToDo の所有者にメール通知するスケジュールフロー](scheduled-task-email-reminder)|・フローのスケジュール実行<br>・メールを送信|
-|[30日以上商談フェーズの変更がない場合、所有者に Chatter でメンションするスケジュールフロー](opportunity-stage-duration-reminder)|・フローのスケジュール実行<br>・Chatter通知|
 
 ### ⚙️ その他フロー
 
