@@ -6,6 +6,7 @@ title: リリースノート
 * 利用できる場合は自動レイアウトを使用し、ランタイムの API バージョンを 50.0 に更新
 * 『[リストビューからリードを一括削除](../mass-delete-leads)』を追加
 * 『[ユーザ登録時の自動BCC設定を解除](../disable-user-email-auto-bcc)』を追加
+* 『[商談成立時に Chatter 投稿とフォローアップ ToDo を作成](big-deal-chatter-alerts)』を追加
 * 『[30日以上商談フェーズの変更がない場合、所有者に Chatter でメンションするスケジュールフロー](../opportunity-stage-duration-reminder)』を追加
 * 『[毎朝9時に完了予定日を過ぎた商談の所有者に Chatter でメンションするスケジュールフロー』を『[毎朝9時に期日を過ぎた ToDo の所有者にメール通知するスケジュールフロー](../scheduled-task-email-reminder/)』に変更
 
