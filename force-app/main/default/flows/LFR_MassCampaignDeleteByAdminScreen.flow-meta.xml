@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
     <assignments>
         <description>取得したキャンペーンの数を変数に割り当てます。</description>
         <name>assign_CountNumOfCreatedCampaigns</name>
         <label>件数の取得</label>
-        <locationX>589</locationX>
-        <locationY>50</locationY>
+        <locationX>50</locationX>
+        <locationY>398</locationY>
         <assignmentItems>
             <assignToReference>var_NumOfCreatedCampaings</assignToReference>
             <operator>AssignCount</operator>
@@ -20,8 +21,8 @@
     <decisions>
         <name>decision_Profile</name>
         <label>プロファイルを確認</label>
-        <locationX>227</locationX>
-        <locationY>52</locationY>
+        <locationX>182</locationX>
+        <locationY>158</locationY>
         <defaultConnector>
             <targetReference>screen_Alert</targetReference>
         </defaultConnector>
@@ -64,6 +65,12 @@
         </value>
     </processMetadataValues>
     <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
         <name>OriginBuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
@@ -73,20 +80,21 @@
     <recordDeletes>
         <name>delete_Campaings</name>
         <label>キャンペーンを削除</label>
-        <locationX>719</locationX>
-        <locationY>241</locationY>
+        <locationX>50</locationX>
+        <locationY>638</locationY>
         <inputReference>get_CampaignCreatedByMe</inputReference>
     </recordDeletes>
     <recordLookups>
         <description>フローを実行しているユーザが作成者であるキャンペーンを取得します。</description>
         <name>get_CampaignCreatedByMe</name>
         <label>キャンペーンの取得</label>
-        <locationX>456</locationX>
-        <locationY>50</locationY>
+        <locationX>50</locationX>
+        <locationY>278</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>assign_CountNumOfCreatedCampaigns</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>CreatedById</field>
             <operator>EqualTo</operator>
@@ -101,8 +109,8 @@
     <screens>
         <name>screen_Alert</name>
         <label>メッセージを表示</label>
-        <locationX>235</locationX>
-        <locationY>308</locationY>
+        <locationX>314</locationX>
+        <locationY>278</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -117,8 +125,8 @@
     <screens>
         <name>screen_Confirmation</name>
         <label>確認メッセージを表示</label>
-        <locationX>719</locationX>
-        <locationY>50</locationY>
+        <locationX>50</locationX>
+        <locationY>518</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -134,8 +142,8 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>50</locationX>
-        <locationY>50</locationY>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>decision_Profile</targetReference>
         </connector>

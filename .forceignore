@@ -12,7 +12,4 @@ package.xml
 **/__tests__/**
 
 # Unnecessary metadata
-**/layouts/**
-**/objects/**
-**/workflows/**
-**/quickActions/**
+**/profiles/**

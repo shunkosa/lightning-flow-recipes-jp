@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LFR_IsDeleted__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>[Flow Recipes] リードを一括削除するフローの起動条件として使用されるチェックボックス項目です。この項目を更新するクイックアクションをリストビューに配置することでリードを一括削除することができます。</description>
+    <externalId>false</externalId>
+    <label>[Flow Recipes] 削除フラグ</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

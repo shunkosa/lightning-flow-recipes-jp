@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
     <interviewLabel>[Flow Recipes] ログインフロー用のサンプル画面 {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[Flow Recipes] ログインフロー用のサンプル画面</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -18,8 +25,8 @@
     <screens>
         <name>screen_Welcome</name>
         <label>ようこそ</label>
-        <locationX>173</locationX>
-        <locationY>61</locationY>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -32,8 +39,8 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>54</locationX>
-        <locationY>61</locationY>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>screen_Welcome</targetReference>
         </connector>

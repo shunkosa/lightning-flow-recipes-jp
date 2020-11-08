@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <apiVersion>50.0</apiVersion>
     <description>取引先と商談を1度に作成する画面フローです。親-子関係のオブジェクトのレコードを作成する方法を理解します。</description>
     <dynamicChoiceSets>
         <name>options_OpportunityStage</name>
@@ -18,6 +19,12 @@
         </value>
     </processMetadataValues>
     <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
         <name>OriginBuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
@@ -27,8 +34,8 @@
     <recordCreates>
         <name>create_Account</name>
         <label>取引先の作成</label>
-        <locationX>391</locationX>
-        <locationY>50</locationY>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
         <connector>
             <targetReference>create_Opportunity</targetReference>
         </connector>
@@ -74,8 +81,8 @@
     <recordCreates>
         <name>create_Opportunity</name>
         <label>商談の作成</label>
-        <locationX>583</locationX>
-        <locationY>50</locationY>
+        <locationX>176</locationX>
+        <locationY>398</locationY>
         <inputAssignments>
             <field>AccountId</field>
             <value>
@@ -112,8 +119,8 @@
     <screens>
         <name>AccountOpportunityCreateScreen</name>
         <label>取引先と商談の登録</label>
-        <locationX>217</locationX>
-        <locationY>50</locationY>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -204,7 +211,7 @@
     </screens>
     <start>
         <locationX>50</locationX>
-        <locationY>50</locationY>
+        <locationY>0</locationY>
         <connector>
             <targetReference>AccountOpportunityCreateScreen</targetReference>
         </connector>
