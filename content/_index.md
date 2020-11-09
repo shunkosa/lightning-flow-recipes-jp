@@ -54,4 +54,4 @@ draft: false
 
 
 ## 🙏🏻 フィードバック
-ご質問、ご要望、または不具合の報告などありましたら [Issue](https://github.com/shunkosa/lightning-flow-recipes-jp/issues/new) や [Twitter](https://www.twitter.com/shunkosa) からお知らせください。また、ご自身の考えたフローをパッケージに加えたい、というコントリビューションも大歓迎です。ぜひご気軽にお問合せください。
+使い方がわからない、こんなフローの作り方が知りたい、誤字脱字や不具合の報告など、ご意見がありましたら [Issue](https://github.com/shunkosa/lightning-flow-recipes-jp/issues/new) や [Twitter](https://www.twitter.com/shunkosa) からお知らせください。[匿名でのコメント](https://forms.gle/ySY7iXgLjn9QqU3A6)も大歓迎です。些細な内容でも構いません。ぜひお気軽にお問合せください。
