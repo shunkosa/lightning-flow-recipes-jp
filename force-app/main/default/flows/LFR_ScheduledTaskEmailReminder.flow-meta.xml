@@ -11,6 +11,7 @@
         <connector>
             <targetReference>loop_Tasks</targetReference>
         </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>emailBody</name>
             <value>
@@ -30,7 +31,7 @@
             </value>
         </inputParameters>
     </actionCalls>
-    <apiVersion>50.0</apiVersion>
+    <apiVersion>51.0</apiVersion>
     <decisions>
         <description>メールを送信する際にToDoの所有者からメールアドレスを辿りますが、所有者がユーザかキューかで参照するオブジェクトが異なるため、分岐を作成します。
 キューはメールアドレスが設定されていないとエラーになってしまうため、このフローでは簡便のために所有者がユーザの場合のみメール送信対象にしています。</description>
@@ -64,12 +65,6 @@
         <name>formula_OrgBaseUrl</name>
         <dataType>String</dataType>
         <expression>LEFT({!$Api.Partner_Server_URL_260}, FIND( &apos;/services&apos;, {!$Api.Partner_Server_URL_260}))</expression>
-    </formulas>
-    <formulas>
-        <description>本日の日付を返す数式です。</description>
-        <name>formula_Today</name>
-        <dataType>Date</dataType>
-        <expression>TODAY()</expression>
     </formulas>
     <interviewLabel>[Flow Recipes] 毎朝9時に期日を過ぎたToDoの所有者にメール通知するフロー {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[Flow Recipes] 毎朝9時に期日を過ぎたToDoの所有者にメール通知するフロー</label>
@@ -119,7 +114,7 @@
             <field>ActivityDate</field>
             <operator>LessThan</operator>
             <value>
-                <elementReference>formula_Today</elementReference>
+                <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </filters>
         <filters>

@@ -25,7 +25,7 @@
         </inputParameters>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
-    <apiVersion>50.0</apiVersion>
+    <apiVersion>51.0</apiVersion>
     <description>金額が1,000,000円以上の商談が成立した場合にChatter投稿とToDoの作成(期日を1週間後にする) を行うレコードトリガフロー(変更後フロー)です。</description>
     <formulas>
         <description>商談の完了予定日の7日後を表す数式です。レコードを作成するアクションでToDoの期日として使用します。</description>
