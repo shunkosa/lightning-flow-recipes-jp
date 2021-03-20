@@ -8,12 +8,12 @@ draft: false
 ![](image.png)
 
 ## 📦 使用方法
-以下からパッケージをインストールしてください。(ver 0.8 / Winter '21)
+以下からパッケージをインストールしてください。(ver 0.8 / Spring '21)
 
-* [Sandbox 組織](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tf4000004J2NLAA0) 
-* [Developer Edition 組織](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tf4000004J2NLAA0)
+* [Sandbox 組織](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t5G000003zeIWQAY) 
+* [Developer Edition 組織](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5G000003zeIWQAY)
 * Trailhead Playground 組織
-    * パッケージ ID として、`04tf4000004J2NLAA0` を使用してください。
+    * パッケージ ID として、`04t5G000003zeIWQAY` を使用してください。
 
 以前のバージョンのパッケージをインストールしたことがあり、フローを有効化している場合は、アップグレード後、新しいフローバージョンとして追加されます。
 
@@ -36,7 +36,7 @@ draft: false
 |フロー名|フローから学べる内容|
 |---|---|
 |[取引先の請求先住所を納入先住所に自動コピー](sync-account-billing-address-to-shipping-address)|・保存前フローの使い方/ユースケース|
-|[ユーザ登録時にメールの BCC 設定をオフにする](disalbe-user-email-auto-bcc)|・保存前フロー
+|[ユーザ登録時にメールの BCC 設定をオフにする](disable-user-email-auto-bcc)|・保存前フロー
 |[Web-to-ケース/メール-to-ケースで取引先責任者を自動作成](create-contact-update-case-from-web-or-email)|・保存後フロー<br>・親レコードの作成と紐付け|
 |[商談成立時に Chatter 投稿とフォローアップ ToDo を作成](big-deal-chatter-alerts)|・保存後フロー<br>・子レコードの作成と紐付け|
 |[リストビューからリードを一括削除する](mass-delete-leads)|・一括クイックアクションと保存後フローの組み合わせ<br>・レコードの削除|
