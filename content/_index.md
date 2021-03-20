@@ -1,9 +1,9 @@
 ---
-title: "Lightning Flow Recipes"
+title: "Salesforce Flow Recipes"
 date: 2020-02-28
 draft: false
 ---
-インストールしてすぐに使用できる Lightning フローのサンプル集です。インストールしたフローは、編集または別名で保存することができます。フローが初めての方は、先に [Trailhead の Flow Builder を使用したフローの作成](https://trailhead.salesforce.com/ja/content/learn/trails/build-flows-with-flow-builder) に取り組んでみてください。
+インストールしてすぐに使用できる Salesforce フロー (Lightning フロー) のサンプル集です。インストールしたフローは、編集または別名で保存することができます。フローが初めての方は、先に [Trailhead の Flow Builder を使用したフローの作成](https://trailhead.salesforce.com/ja/content/learn/trails/build-flows-with-flow-builder) に取り組んでみてください。
 
 ![](image.png)
 
