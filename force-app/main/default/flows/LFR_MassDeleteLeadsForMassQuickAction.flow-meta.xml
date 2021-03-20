@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>50.0</apiVersion>
+    <apiVersion>51.0</apiVersion>
     <description>一括クイックアクションから呼び出すことを想定した、カスタムのチェックボックス項目に基づいてリードを削除するレコードトリガフローです。</description>
     <interviewLabel>[Flow Recipes] リードの一括削除用フロー {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[Flow Recipes] リストビューからリードの一括削除</label>

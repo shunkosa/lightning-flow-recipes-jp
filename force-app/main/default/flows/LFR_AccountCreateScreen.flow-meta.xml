@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>50.0</apiVersion>
+    <apiVersion>51.0</apiVersion>
     <description>取引先を新規作成するシンプルな画面フローです。従業員数が2000以上のときのみ年間売上の入力欄が表示されます。画面要素の基本的な使用方法や、レコードの作成要素の使用方法を理解します。</description>
     <interviewLabel>[Flow Recipes] 取引先の新規作成 {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[Flow Recipes] 取引先の作成画面</label>
