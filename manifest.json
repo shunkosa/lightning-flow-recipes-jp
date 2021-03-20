@@ -1,6 +1,6 @@
 {
-  "name": "Lightning Flow Recipes",
-  "short_name": "Lightning Flow Recipes",
+  "name": "Salesforce Flow Recipes",
+  "short_name": "Salesforce Flow Recipes",
   "start_url": "/lightning-flow-recipes-jp/",
   "scope": "/lightning-flow-recipes-jp/",
   "display": "standalone",
