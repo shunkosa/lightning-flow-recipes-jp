@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <apiVersion>51.0</apiVersion>
+    <apiVersion>52.0</apiVersion>
     <description>取引先と商談を1度に作成する画面フローです。親-子関係のオブジェクトのレコードを作成する方法を理解します。</description>
     <dynamicChoiceSets>
         <name>options_OpportunityStage</name>

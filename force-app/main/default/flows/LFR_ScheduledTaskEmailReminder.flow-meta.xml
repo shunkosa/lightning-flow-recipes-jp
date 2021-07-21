@@ -31,7 +31,7 @@
             </value>
         </inputParameters>
     </actionCalls>
-    <apiVersion>51.0</apiVersion>
+    <apiVersion>52.0</apiVersion>
     <decisions>
         <description>メールを送信する際にToDoの所有者からメールアドレスを辿りますが、所有者がユーザかキューかで参照するオブジェクトが異なるため、分岐を作成します。
 キューはメールアドレスが設定されていないとエラーになってしまうため、このフローでは簡便のために所有者がユーザの場合のみメール送信対象にしています。</description>

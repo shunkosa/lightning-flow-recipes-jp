@@ -8,12 +8,12 @@ draft: false
 ![](image.png)
 
 ## 📦 使用方法
-以下からパッケージをインストールしてください。(ver 0.8 / Spring '21)
+以下からパッケージをインストールしてください。(ver 0.10 / Summer '21)
 
-* [Sandbox 組織](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t5G000003zeIWQAY) 
-* [Developer Edition 組織](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5G000003zeIWQAY)
+* [Sandbox 組織](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t5G000003zeYtQAI) 
+* [Developer Edition 組織](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5G000003zeYtQAI)
 * Trailhead Playground 組織
-    * パッケージ ID として、`04t5G000003zeIWQAY` を使用してください。
+    * パッケージ ID として、`04t5G000003zeYtQAI` を使用してください。
 
 以前のバージョンのパッケージをインストールしたことがあり、フローを有効化している場合は、アップグレード後、新しいフローバージョンとして追加されます。
 
@@ -24,7 +24,7 @@ draft: false
 |フロー名|フローから学べる内容|
 |---|---|
 |[取引先の作成画面](account-create-screen)|・[画面] の使い方<br>・[レコードの作成] の使い方<br>・他のフォームの値に応じてフォームの表示/非表示を切り替える|
-|[リードの更新画面](lead-update-screen)|・開いているレコードの情報を取得する<br>・レコード変数を用いた [レコードの更新] の使い方<br>・選択リスト値のデフォルト値として現在の値を取得する|
+|[リードの更新画面](lead-update-screen)|・開いているレコードの情報を取得する<br>・レコード変数を用いた [レコードの更新] の使い方<br>・選択リスト(ラジオボタン)の使い方|
 |[取引先と商談を1度に作成する画面](account-opportunity-create-screen)|・リレーションのあるオブジェクトのレコードを作成する|
 |[取引先から取引先責任者に一括メールを送信する画面](mass-email-to-contacts-screen)|・子レコードを取得する (コレクション変数の使い方)<br>・[ループ] の使い方<br>・[決定] の使い方<br>・メール送信アクション|
 |[商談と取引先責任者ロールを1度に作成する画面](opportunity-and-contact-role-create-screen)|・[ルックアップ] の使い方<br>・リレーションのあるオブジェクトのレコードを作成する<br>・固定の大きさのレコードコレクション変数を用いて複数のレコードを作成する|
