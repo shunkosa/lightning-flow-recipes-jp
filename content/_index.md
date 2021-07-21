@@ -10,10 +10,10 @@ draft: false
 ## 📦 使用方法
 以下からパッケージをインストールしてください。(ver 0.10 / Summer '21)
 
-* [Sandbox 組織](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t5G000003zeYtQAI) 
-* [Developer Edition 組織](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5G000003zeYtQAI)
+* [Sandbox 組織](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t5G000003zeYyQAI) 
+* [Developer Edition 組織](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5G000003zeYyQAI)
 * Trailhead Playground 組織
-    * パッケージ ID として、`04t5G000003zeYtQAI` を使用してください。
+    * パッケージ ID として、`04t5G000003zeYyQAI` を使用してください。
 
 以前のバージョンのパッケージをインストールしたことがあり、フローを有効化している場合は、アップグレード後、新しいフローバージョンとして追加されます。
 
