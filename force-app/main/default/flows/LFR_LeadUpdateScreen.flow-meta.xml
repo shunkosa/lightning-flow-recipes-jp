@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>52.0</apiVersion>
     <assignments>
         <name>assign_LeadFields</name>
@@ -38,46 +38,15 @@
             <targetReference>update_Lead</targetReference>
         </connector>
     </assignments>
-    <choices>
-        <name>option_CurrentLeadRating</name>
-        <choiceText>{!formula_CurrentLeadRatingLabel}</choiceText>
-        <dataType>String</dataType>
-        <value>
-            <elementReference>recordId.Rating</elementReference>
-        </value>
-    </choices>
     <description>リードを更新するシンプルな画面フローです。開いているレコードのIDを取得する方法や、レコード変数を用いてレコードを更新する方法、選択リスト値のデフォルト値として現在の値を取得する方法を理解します。</description>
     <dynamicChoiceSets>
-        <name>options_LeadRatingWithoutCurrentSelection</name>
-        <dataType>String</dataType>
-        <displayField>Label</displayField>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>EntityParticleId</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Lead.Rating</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Value</field>
-            <operator>NotEqualTo</operator>
-            <value>
-                <elementReference>recordId.Rating</elementReference>
-            </value>
-        </filters>
-        <object>PicklistValueInfo</object>
-        <valueField>Value</valueField>
+        <name>options_LeadRating</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Rating</picklistField>
+        <picklistObject>Lead</picklistObject>
     </dynamicChoiceSets>
-    <formulas>
-        <description>現在のリードの[評価]項目の表示ラベルを求める数式項目です。数式項目では選択リスト値の表示ラベルを直接取得できないため、CASE文で選択リストのAPI名を表示ラベルに変換しています。組織の内容に合わせて変更してください。</description>
-        <name>formula_CurrentLeadRatingLabel</name>
-        <dataType>String</dataType>
-        <expression>CASE(TEXT({!recordId.Rating}),
-&apos;Hot&apos;,&apos;Hot&apos;,
-&apos;Warm&apos;,&apos;Warm&apos;,
-&apos;Cold&apos;,&apos;Cold&apos;,&apos;なし&apos;)</expression>
-    </formulas>
     <interviewLabel>リードの更新 {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[Flow Recipes] リードの更新画面</label>
     <processMetadataValues>
@@ -118,23 +87,50 @@
             <targetReference>assign_LeadFields</targetReference>
         </connector>
         <fields>
-            <name>input_LeadLastName</name>
-            <dataType>String</dataType>
-            <defaultValue>
-                <elementReference>recordId.LastName</elementReference>
-            </defaultValue>
-            <fieldText>姓</fieldText>
-            <fieldType>InputField</fieldType>
-            <isRequired>false</isRequired>
-        </fields>
-        <fields>
-            <name>input_LeadFirstName</name>
-            <dataType>String</dataType>
-            <defaultValue>
-                <elementReference>recordId.FirstName</elementReference>
-            </defaultValue>
-            <fieldText>名</fieldText>
-            <fieldType>InputField</fieldType>
+            <name>screen_LeadUpdate_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>screen_LeadUpdate_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>input_LeadLastName</name>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>recordId.LastName</elementReference>
+                    </defaultValue>
+                    <fieldText>姓</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>screen_LeadUpdate_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>input_LeadFirstName</name>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>recordId.FirstName</elementReference>
+                    </defaultValue>
+                    <fieldText>名</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
             <isRequired>false</isRequired>
         </fields>
         <fields>
@@ -149,10 +145,11 @@
         </fields>
         <fields>
             <name>input_LeadRating</name>
-            <choiceReferences>options_LeadRatingWithoutCurrentSelection</choiceReferences>
-            <choiceReferences>option_CurrentLeadRating</choiceReferences>
+            <choiceReferences>options_LeadRating</choiceReferences>
             <dataType>String</dataType>
-            <defaultSelectedChoiceReference>option_CurrentLeadRating</defaultSelectedChoiceReference>
+            <defaultValue>
+                <elementReference>recordId.Rating</elementReference>
+            </defaultValue>
             <fieldText>評価</fieldText>
             <fieldType>RadioButtons</fieldType>
             <isRequired>false</isRequired>
