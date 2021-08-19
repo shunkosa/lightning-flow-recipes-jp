@@ -1,13 +1,207 @@
-<!doctype html><html lang=ja><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Help に記載のベストプラクティス に可能な限り従ってください。
+<!doctype html><html lang=ja>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Help に記載のベストプラクティス に可能な限り従ってください。
 命名規則 #  各要素の API 名には命名規則を設けることで保守性が高まります。このレシピでは一例として以下の命名規則を定めています。また、各要素の [説明] 欄には可能な限りその目的を入力しておきましょう。
    要素 命名規則の例 API名の例     画面 screen_ で始める screen_LeadUpdate   画面の入力要素 input_ で始める input_FirstName   画面の表示要素 display_ で始める display_ErrorMessage   数式 formula_ で始める formula_Today   変数 var_ で始める
-(※recordId は例外) var_AccountId   決定 decision_ で始める decision_Profile   ループ loop_ で始める loop_Contacts   割り当て assign_ で始める assign_AccountShippingAddress   レコードを取得 ・get_ で始める"><meta name=theme-color content="#FFFFFF"><meta property="og:title" content="実装時に気をつけると良いこと"><meta property="og:description" content="Help に記載のベストプラクティス に可能な限り従ってください。
+(※recordId は例外) var_AccountId   決定 decision_ で始める decision_Profile   ループ loop_ で始める loop_Contacts   割り当て assign_ で始める assign_AccountShippingAddress   レコードを取得 ・get_ で始める">
+<meta name=theme-color content="#FFFFFF"><meta property="og:title" content="実装時に気をつけると良いこと">
+<meta property="og:description" content="Help に記載のベストプラクティス に可能な限り従ってください。
 命名規則 #  各要素の API 名には命名規則を設けることで保守性が高まります。このレシピでは一例として以下の命名規則を定めています。また、各要素の [説明] 欄には可能な限りその目的を入力しておきましょう。
    要素 命名規則の例 API名の例     画面 screen_ で始める screen_LeadUpdate   画面の入力要素 input_ で始める input_FirstName   画面の表示要素 display_ で始める display_ErrorMessage   数式 formula_ で始める formula_Today   変数 var_ で始める
-(※recordId は例外) var_AccountId   決定 decision_ で始める decision_Profile   ループ loop_ で始める loop_Contacts   割り当て assign_ で始める assign_AccountShippingAddress   レコードを取得 ・get_ で始める"><meta property="og:type" content="article"><meta property="og:url" content="https://shunkosa.github.io/lightning-flow-recipes-jp/design-guideline/"><meta property="article:section" content><meta property="article:published_time" content="2020-07-20T00:00:00+00:00"><meta property="article:modified_time" content="2020-07-20T00:00:00+00:00"><title>実装時に気をつけると良いこと | Salesforce Flow Recipes</title><link rel=manifest href=/lightning-flow-recipes-jp/manifest.json><link rel=icon href=/lightning-flow-recipes-jp/favicon.png type=image/x-icon><link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel=stylesheet><link rel=stylesheet href=/lightning-flow-recipes-jp/book.min.c43b596a4d60811469270724ebd1598ef06aa86a59d8945595ff128ed09c5fab.css integrity="sha256-xDtZak1ggRRpJwck69FZjvBqqGpZ2JRVlf8SjtCcX6s="><script async src="https://www.googletagmanager.com/gtag/js?id=G-ESEWC9RTQC"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-ESEWC9RTQC')</script><script defer src=/lightning-flow-recipes-jp/ja.search.min.017071391d26ade406f8bab59f1f659f443df2eb4665c12b7086475c6163f011.js integrity="sha256-AXBxOR0mreQG+Lq1nx9ln0Q98utGZcErcIZHXGFj8BE="></script></head><body><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><nav><h2 class=book-brand><a href=/lightning-flow-recipes-jp><span>Salesforce Flow Recipes</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=検索 aria-label=検索 maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><a href=/lightning-flow-recipes-jp/>トップページ・レシピ集</a></li><li><a href=/lightning-flow-recipes-jp/changelog/>リリースノート</a></li><li>補足<ul><li><a href=/lightning-flow-recipes-jp/design-guideline/ class=active>実装時に気をつけると良いこと</a></li><li><a href=/lightning-flow-recipes-jp/unsupported-features/>レコードトリガフローの考慮事項</a><br></li></ul></li></ul><ul><li><a href=https://github.com/shunkosa/lightning-flow-recipes-jp/ target=_blank rel=noopener>GitHub</a></li></ul></nav><script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/lightning-flow-recipes-jp/svg/menu.svg class=book-icon alt=Menu></label>
+(※recordId は例外) var_AccountId   決定 decision_ で始める decision_Profile   ループ loop_ で始める loop_Contacts   割り当て assign_ で始める assign_AccountShippingAddress   レコードを取得 ・get_ で始める">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shunkosa.github.io/lightning-flow-recipes-jp/design-guideline/"><meta property="article:section" content>
+<meta property="article:published_time" content="2020-07-20T00:00:00+00:00">
+<meta property="article:modified_time" content="2020-07-20T00:00:00+00:00">
+<title>実装時に気をつけると良いこと | Salesforce Flow Recipes</title>
+<link rel=manifest href=/lightning-flow-recipes-jp/manifest.json>
+<link rel=icon href=/lightning-flow-recipes-jp/favicon.png type=image/x-icon>
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel=stylesheet>
+<link rel=stylesheet href=/lightning-flow-recipes-jp/book.min.c43b596a4d60811469270724ebd1598ef06aa86a59d8945595ff128ed09c5fab.css integrity="sha256-xDtZak1ggRRpJwck69FZjvBqqGpZ2JRVlf8SjtCcX6s=">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESEWC9RTQC"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-ESEWC9RTQC')</script>
+<script defer src=/lightning-flow-recipes-jp/ja.search.min.8cbefdbe2581ced3fc492b4c1d0731ab4fb6de5e37ce6c66872ab608941d79a1.js integrity="sha256-jL79viWBztP8SStMHQcxq0+23l43zmxmhyq2CJQdeaE="></script>
+</head>
+<body>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<nav>
+<h2 class=book-brand>
+<a href=/lightning-flow-recipes-jp><span>Salesforce Flow Recipes</span>
+</a>
+</h2>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=検索 aria-label=検索 maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
+</div>
+<ul>
+<li><a href=/lightning-flow-recipes-jp/>トップページ・レシピ集</a></li>
+<li><a href=/lightning-flow-recipes-jp/changelog/>リリースノート</a></li>
+<li>補足
+<ul>
+<li><a href=/lightning-flow-recipes-jp/design-guideline/ class=active>実装時に気をつけると良いこと</a></li>
+<li><a href=/lightning-flow-recipes-jp/unsupported-features/>レコードトリガフローの考慮事項</a>
+<br></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<a href=https://github.com/shunkosa/lightning-flow-recipes-jp/ target=_blank rel=noopener>
+GitHub
+</a>
+</li>
+</ul>
+</nav>
+<script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=/lightning-flow-recipes-jp/svg/menu.svg class=book-icon alt=Menu>
+</label>
 <strong>実装時に気をつけると良いこと</strong>
-<label for=toc-control><img src=/lightning-flow-recipes-jp/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#命名規則>命名規則</a></li><li><a href=#主要なガバナ制約>主要なガバナ制約</a></li><li><a href=#実行ユーザ>実行ユーザ</a></li></ul></nav></aside></header><article class=markdown><h1>実装時に気をつけると良いこと</h1><p><a href="https://help.salesforce.com/articleView?id=flow_prep_bestpractices.htm&type=5">Help に記載のベストプラクティス</a> に可能な限り従ってください。</p><h2 id=命名規則>命名規則
-<a class=anchor href=#%e5%91%bd%e5%90%8d%e8%a6%8f%e5%89%87>#</a></h2><p>各要素の API 名には命名規則を設けることで保守性が高まります。このレシピでは<strong>一例として</strong>以下の命名規則を定めています。また、各要素の [説明] 欄には可能な限りその目的を入力しておきましょう。</p><table><thead><tr><th>要素</th><th>命名規則の例</th><th>API名の例</th></tr></thead><tbody><tr><td>画面</td><td><code>screen_</code> で始める</td><td><code>screen_LeadUpdate</code></td></tr><tr><td>画面の入力要素</td><td><code>input_</code> で始める</td><td><code>input_FirstName</code></td></tr><tr><td>画面の表示要素</td><td><code>display_</code> で始める</td><td><code>display_ErrorMessage</code></td></tr><tr><td>数式</td><td><code>formula_</code> で始める</td><td><code>formula_Today</code></td></tr><tr><td>変数</td><td><code>var_</code> で始める<br>(※<code>recordId</code> は例外)</td><td><code>var_AccountId</code></td></tr><tr><td>決定</td><td><code>decision_</code> で始める</td><td><code>decision_Profile</code></td></tr><tr><td>ループ</td><td><code>loop_</code> で始める</td><td><code>loop_Contacts</code></td></tr><tr><td>割り当て</td><td><code>assign_</code> で始める</td><td><code>assign_AccountShippingAddress</code></td></tr><tr><td>レコードを取得</td><td>・<code>get_</code> で始める<br>・オブジェクト名を含める</td><td><code>get_Opportunity</code></td></tr><tr><td>レコードを作成</td><td>・<code>create_</code> で始める<br>・オブジェクト名を含める</td><td><code>create_Lead</code></td></tr><tr><td>レコードを更新</td><td>・<code>update_</code> で始める<br>・オブジェクト名を含める</td><td><code>update_Contact</code></td></tr><tr><td>レコードを削除</td><td>・<code>delete_</code> で始める<br>・オブジェクト名を含める</td><td><code>delete_Account</code></td></tr></tbody></table><h2 id=主要なガバナ制約>主要なガバナ制約
-<a class=anchor href=#%e4%b8%bb%e8%a6%81%e3%81%aa%e3%82%ac%e3%83%90%e3%83%8a%e5%88%b6%e7%b4%84>#</a></h2><p>フローやプロセスは、Apex トリガと異なり、<a href="https://help.salesforce.com/articleView?id=flow_concepts_bulkification.htm&type=5">自動で一括処理 (Bulkifiation) が考慮</a>されますが、主要な制限に抵触しないように、実装時には以下に注意が必要です。</p><ul><li>フロー内で 1 度に実行できるレコードの操作には上限があるため、<strong>ループ内でのレコード操作を避け、コレクション変数を使用してレコードを操作してください。</strong><ul><li>詳細は <a href="https://help.salesforce.com/articleView?id=flow_considerations_limit_transaction.htm&type=5">Help 記事</a> を参照してください。</li></ul></li><li>1 度に実行できるフロー要素の上限は 2000 のため、大きなコレクション変数をループする場合、この制限に抵触する可能性があります。ループ内のロジックを最適化できないか検討してください。<ul><li>自動実行フローの場合は、[一時停止] 要素を使用することで処理を分けることができますが、このとき、フローの残りの部分は異なる処理で非同期に実行されます。</li></ul></li></ul><h2 id=実行ユーザ>実行ユーザ
-<a class=anchor href=#%e5%ae%9f%e8%a1%8c%e3%83%a6%e3%83%bc%e3%82%b6>#</a></h2><ul><li>Summer &lsquo;20 から<a href=https://releasenotes.docs.salesforce.com/ja-jp/summer20/release-notes/rn_forcecom_flow_fbuilder_system_mode_no_sharing.htm>開始要素でフローの実行ユーザを細かく制御できる</a>ようになりました。</li><li>自動起動フローは、呼び出し元の実行ユーザを引き継ぎます。プロセスからフローを起動する場合、プロセスの実行はシステムコンテキストとなるため、呼び出されるフローの実行ユーザもシステムコンテキストとなります。</li></ul></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><nav id=TableOfContents><ul><li><a href=#命名規則>命名規則</a></li><li><a href=#主要なガバナ制約>主要なガバナ制約</a></li><li><a href=#実行ユーザ>実行ユーザ</a></li></ul></nav></aside></main></body></html>
+<label for=toc-control>
+<img src=/lightning-flow-recipes-jp/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
+</div>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#命名規則>命名規則</a></li>
+<li><a href=#主要なガバナ制約>主要なガバナ制約</a></li>
+<li><a href=#実行ユーザ>実行ユーザ</a></li>
+</ul>
+</nav>
+</aside>
+</header>
+<article class=markdown>
+<h1>実装時に気をつけると良いこと</h1><p><a href="https://help.salesforce.com/articleView?id=flow_prep_bestpractices.htm&type=5">Help に記載のベストプラクティス</a> に可能な限り従ってください。</p>
+<h2 id=命名規則>
+命名規則
+<a class=anchor href=#%e5%91%bd%e5%90%8d%e8%a6%8f%e5%89%87>#</a>
+</h2>
+<p>各要素の API 名には命名規則を設けることで保守性が高まります。このレシピでは<strong>一例として</strong>以下の命名規則を定めています。また、各要素の [説明] 欄には可能な限りその目的を入力しておきましょう。</p>
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>命名規則の例</th>
+<th>API名の例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>画面</td>
+<td><code>screen_</code> で始める</td>
+<td><code>screen_LeadUpdate</code></td>
+</tr>
+<tr>
+<td>画面の入力要素</td>
+<td><code>input_</code> で始める</td>
+<td><code>input_FirstName</code></td>
+</tr>
+<tr>
+<td>画面の表示要素</td>
+<td><code>display_</code> で始める</td>
+<td><code>display_ErrorMessage</code></td>
+</tr>
+<tr>
+<td>数式</td>
+<td><code>formula_</code> で始める</td>
+<td><code>formula_Today</code></td>
+</tr>
+<tr>
+<td>変数</td>
+<td><code>var_</code> で始める<br>(※<code>recordId</code> は例外)</td>
+<td><code>var_AccountId</code></td>
+</tr>
+<tr>
+<td>決定</td>
+<td><code>decision_</code> で始める</td>
+<td><code>decision_Profile</code></td>
+</tr>
+<tr>
+<td>ループ</td>
+<td><code>loop_</code> で始める</td>
+<td><code>loop_Contacts</code></td>
+</tr>
+<tr>
+<td>割り当て</td>
+<td><code>assign_</code> で始める</td>
+<td><code>assign_AccountShippingAddress</code></td>
+</tr>
+<tr>
+<td>レコードを取得</td>
+<td>・<code>get_</code> で始める<br>・オブジェクト名を含める</td>
+<td><code>get_Opportunity</code></td>
+</tr>
+<tr>
+<td>レコードを作成</td>
+<td>・<code>create_</code> で始める<br>・オブジェクト名を含める</td>
+<td><code>create_Lead</code></td>
+</tr>
+<tr>
+<td>レコードを更新</td>
+<td>・<code>update_</code> で始める<br>・オブジェクト名を含める</td>
+<td><code>update_Contact</code></td>
+</tr>
+<tr>
+<td>レコードを削除</td>
+<td>・<code>delete_</code> で始める<br>・オブジェクト名を含める</td>
+<td><code>delete_Account</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id=主要なガバナ制約>
+主要なガバナ制約
+<a class=anchor href=#%e4%b8%bb%e8%a6%81%e3%81%aa%e3%82%ac%e3%83%90%e3%83%8a%e5%88%b6%e7%b4%84>#</a>
+</h2>
+<p>フローやプロセスは、Apex トリガと異なり、<a href="https://help.salesforce.com/articleView?id=flow_concepts_bulkification.htm&type=5">自動で一括処理 (Bulkifiation) が考慮</a>されますが、主要な制限に抵触しないように、実装時には以下に注意が必要です。</p>
+<ul>
+<li>フロー内で 1 度に実行できるレコードの操作には上限があるため、<strong>ループ内でのレコード操作を避け、コレクション変数を使用してレコードを操作してください。</strong>
+<ul>
+<li>詳細は <a href="https://help.salesforce.com/articleView?id=flow_considerations_limit_transaction.htm&type=5">Help 記事</a> を参照してください。</li>
+</ul>
+</li>
+<li>1 度に実行できるフロー要素の上限は 2000 のため、大きなコレクション変数をループする場合、この制限に抵触する可能性があります。ループ内のロジックを最適化できないか検討してください。
+<ul>
+<li>自動実行フローの場合は、[一時停止] 要素を使用することで処理を分けることができますが、このとき、フローの残りの部分は異なる処理で非同期に実行されます。</li>
+</ul>
+</li>
+</ul>
+<h2 id=実行ユーザ>
+実行ユーザ
+<a class=anchor href=#%e5%ae%9f%e8%a1%8c%e3%83%a6%e3%83%bc%e3%82%b6>#</a>
+</h2>
+<ul>
+<li>Summer &lsquo;20 から<a href=https://releasenotes.docs.salesforce.com/ja-jp/summer20/release-notes/rn_forcecom_flow_fbuilder_system_mode_no_sharing.htm>開始要素でフローの実行ユーザを細かく制御できる</a>ようになりました。</li>
+<li>自動起動フローは、呼び出し元の実行ユーザを引き継ぎます。プロセスからフローを起動する場合、プロセスの実行はシステムコンテキストとなるため、呼び出されるフローの実行ユーザもシステムコンテキストとなります。</li>
+</ul>
+</article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
+</div>
+</footer>
+<div class=book-comments>
+</div>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#命名規則>命名規則</a></li>
+<li><a href=#主要なガバナ制約>主要なガバナ制約</a></li>
+<li><a href=#実行ユーザ>実行ユーザ</a></li>
+</ul>
+</nav>
+</aside>
+</main>
+</body>
+</html>

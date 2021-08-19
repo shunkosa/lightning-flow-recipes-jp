@@ -1,9 +1,111 @@
-<!doctype html><html lang=ja><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="ユーザ登録時にメールのBCC設定をオフにするためのレコードトリガフロー(保存前フロー)です。
+<!doctype html><html lang=ja>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="ユーザ登録時にメールのBCC設定をオフにするためのレコードトリガフロー(保存前フロー)です。
 この項目はデフォルトでONになっていますが、このフローを有効化すると、登録時にOFFに設定されます。
-ポイント #   保存前フローの基本的な内容については、『取引先の請求先住所を納入先住所に自動コピー』も合わせて確認してください。 同様の機能はプロセスビルダーや保存後フローでも実装できますが、実現したい処理が同じオブジェクトを更新するだけであれば、保存前フローの方が作りがシンプルになり、処理も高速です。  "><meta name=theme-color content="#FFFFFF"><meta property="og:title" content="ユーザ登録時にメールのBCC設定をオフにする"><meta property="og:description" content="ユーザ登録時にメールのBCC設定をオフにするためのレコードトリガフロー(保存前フロー)です。
+ポイント #   保存前フローの基本的な内容については、『取引先の請求先住所を納入先住所に自動コピー』も合わせて確認してください。 同様の機能はプロセスビルダーや保存後フローでも実装できますが、実現したい処理が同じオブジェクトを更新するだけであれば、保存前フローの方が作りがシンプルになり、処理も高速です。  ">
+<meta name=theme-color content="#FFFFFF"><meta property="og:title" content="ユーザ登録時にメールのBCC設定をオフにする">
+<meta property="og:description" content="ユーザ登録時にメールのBCC設定をオフにするためのレコードトリガフロー(保存前フロー)です。
 この項目はデフォルトでONになっていますが、このフローを有効化すると、登録時にOFFに設定されます。
-ポイント #   保存前フローの基本的な内容については、『取引先の請求先住所を納入先住所に自動コピー』も合わせて確認してください。 同様の機能はプロセスビルダーや保存後フローでも実装できますが、実現したい処理が同じオブジェクトを更新するだけであれば、保存前フローの方が作りがシンプルになり、処理も高速です。  "><meta property="og:type" content="article"><meta property="og:url" content="https://shunkosa.github.io/lightning-flow-recipes-jp/disable-user-email-auto-bcc/"><meta property="article:section" content><meta property="article:published_time" content="2020-11-02T00:00:00+00:00"><meta property="article:modified_time" content="2020-11-02T00:00:00+00:00"><title>ユーザ登録時にメールのBCC設定をオフにする | Salesforce Flow Recipes</title><link rel=manifest href=/lightning-flow-recipes-jp/manifest.json><link rel=icon href=/lightning-flow-recipes-jp/favicon.png type=image/x-icon><link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel=stylesheet><link rel=stylesheet href=/lightning-flow-recipes-jp/book.min.c43b596a4d60811469270724ebd1598ef06aa86a59d8945595ff128ed09c5fab.css integrity="sha256-xDtZak1ggRRpJwck69FZjvBqqGpZ2JRVlf8SjtCcX6s="><script async src="https://www.googletagmanager.com/gtag/js?id=G-ESEWC9RTQC"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-ESEWC9RTQC')</script><script defer src=/lightning-flow-recipes-jp/ja.search.min.017071391d26ade406f8bab59f1f659f443df2eb4665c12b7086475c6163f011.js integrity="sha256-AXBxOR0mreQG+Lq1nx9ln0Q98utGZcErcIZHXGFj8BE="></script></head><body><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><nav><h2 class=book-brand><a href=/lightning-flow-recipes-jp><span>Salesforce Flow Recipes</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=検索 aria-label=検索 maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><a href=/lightning-flow-recipes-jp/>トップページ・レシピ集</a></li><li><a href=/lightning-flow-recipes-jp/changelog/>リリースノート</a></li><li>補足<ul><li><a href=/lightning-flow-recipes-jp/design-guideline/>実装時に気をつけると良いこと</a></li><li><a href=/lightning-flow-recipes-jp/unsupported-features/>レコードトリガフローの考慮事項</a><br></li></ul></li></ul><ul><li><a href=https://github.com/shunkosa/lightning-flow-recipes-jp/ target=_blank rel=noopener>GitHub</a></li></ul></nav><script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/lightning-flow-recipes-jp/svg/menu.svg class=book-icon alt=Menu></label>
+ポイント #   保存前フローの基本的な内容については、『取引先の請求先住所を納入先住所に自動コピー』も合わせて確認してください。 同様の機能はプロセスビルダーや保存後フローでも実装できますが、実現したい処理が同じオブジェクトを更新するだけであれば、保存前フローの方が作りがシンプルになり、処理も高速です。  ">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shunkosa.github.io/lightning-flow-recipes-jp/disable-user-email-auto-bcc/"><meta property="article:section" content>
+<meta property="article:published_time" content="2020-11-02T00:00:00+00:00">
+<meta property="article:modified_time" content="2020-11-02T00:00:00+00:00">
+<title>ユーザ登録時にメールのBCC設定をオフにする | Salesforce Flow Recipes</title>
+<link rel=manifest href=/lightning-flow-recipes-jp/manifest.json>
+<link rel=icon href=/lightning-flow-recipes-jp/favicon.png type=image/x-icon>
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel=stylesheet>
+<link rel=stylesheet href=/lightning-flow-recipes-jp/book.min.c43b596a4d60811469270724ebd1598ef06aa86a59d8945595ff128ed09c5fab.css integrity="sha256-xDtZak1ggRRpJwck69FZjvBqqGpZ2JRVlf8SjtCcX6s=">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESEWC9RTQC"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-ESEWC9RTQC')</script>
+<script defer src=/lightning-flow-recipes-jp/ja.search.min.8cbefdbe2581ced3fc492b4c1d0731ab4fb6de5e37ce6c66872ab608941d79a1.js integrity="sha256-jL79viWBztP8SStMHQcxq0+23l43zmxmhyq2CJQdeaE="></script>
+</head>
+<body>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<nav>
+<h2 class=book-brand>
+<a href=/lightning-flow-recipes-jp><span>Salesforce Flow Recipes</span>
+</a>
+</h2>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=検索 aria-label=検索 maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
+</div>
+<ul>
+<li><a href=/lightning-flow-recipes-jp/>トップページ・レシピ集</a></li>
+<li><a href=/lightning-flow-recipes-jp/changelog/>リリースノート</a></li>
+<li>補足
+<ul>
+<li><a href=/lightning-flow-recipes-jp/design-guideline/>実装時に気をつけると良いこと</a></li>
+<li><a href=/lightning-flow-recipes-jp/unsupported-features/>レコードトリガフローの考慮事項</a>
+<br></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<a href=https://github.com/shunkosa/lightning-flow-recipes-jp/ target=_blank rel=noopener>
+GitHub
+</a>
+</li>
+</ul>
+</nav>
+<script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=/lightning-flow-recipes-jp/svg/menu.svg class=book-icon alt=Menu>
+</label>
 <strong>ユーザ登録時にメールのBCC設定をオフにする</strong>
-<label for=toc-control><img src=/lightning-flow-recipes-jp/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#ポイント>ポイント</a></li></ul></nav></aside></header><article class=markdown><h1>ユーザ登録時にメールのBCC設定をオフにする</h1><p><img src=disable_user_email_auto_bcc_screenshot.png alt></p><p>ユーザ登録時にメールのBCC設定をオフにするためのレコードトリガフロー(保存前フロー)です。</p><img src=my_email_setting.png width=50%><p>この項目はデフォルトでONになっていますが、このフローを有効化すると、登録時にOFFに設定されます。</p><h2 id=ポイント>ポイント
-<a class=anchor href=#%e3%83%9d%e3%82%a4%e3%83%b3%e3%83%88>#</a></h2><ul><li>保存前フローの基本的な内容については、『<a href=../sync-account-billing-address-to-shipping-address>取引先の請求先住所を納入先住所に自動コピー</a>』も合わせて確認してください。</li><li>同様の機能はプロセスビルダーや保存後フローでも実装できますが、実現したい処理が同じオブジェクトを更新するだけであれば、保存前フローの方が作りがシンプルになり、処理も高速です。</li></ul></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><nav id=TableOfContents><ul><li><a href=#ポイント>ポイント</a></li></ul></nav></aside></main></body></html>
+<label for=toc-control>
+<img src=/lightning-flow-recipes-jp/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
+</div>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#ポイント>ポイント</a></li>
+</ul>
+</nav>
+</aside>
+</header>
+<article class=markdown>
+<h1>ユーザ登録時にメールのBCC設定をオフにする</h1><p><img src=disable_user_email_auto_bcc_screenshot.png alt></p>
+<p>ユーザ登録時にメールのBCC設定をオフにするためのレコードトリガフロー(保存前フロー)です。</p>
+<img src=my_email_setting.png width=50%>
+<p>この項目はデフォルトでONになっていますが、このフローを有効化すると、登録時にOFFに設定されます。</p>
+<h2 id=ポイント>
+ポイント
+<a class=anchor href=#%e3%83%9d%e3%82%a4%e3%83%b3%e3%83%88>#</a>
+</h2>
+<ul>
+<li>保存前フローの基本的な内容については、『<a href=../sync-account-billing-address-to-shipping-address>取引先の請求先住所を納入先住所に自動コピー</a>』も合わせて確認してください。</li>
+<li>同様の機能はプロセスビルダーや保存後フローでも実装できますが、実現したい処理が同じオブジェクトを更新するだけであれば、保存前フローの方が作りがシンプルになり、処理も高速です。</li>
+</ul>
+</article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
+</div>
+</footer>
+<div class=book-comments>
+</div>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#ポイント>ポイント</a></li>
+</ul>
+</nav>
+</aside>
+</main>
+</body>
+</html>

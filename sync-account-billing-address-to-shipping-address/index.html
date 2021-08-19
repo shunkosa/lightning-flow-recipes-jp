@@ -1,16 +1,139 @@
-<!doctype html><html lang=ja><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="ポイント #  取引先の請求先住所を納入先住所に自動コピーするフローです。
+<!doctype html><html lang=ja>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="ポイント #  取引先の請求先住所を納入先住所に自動コピーするフローです。
 保存前フローについて #  Spring &lsquo;20 で GA となった保存前フローはプロセスビルダーと同様に、レコードの作成や更新をきっかけとして起動する自動化プロセスです。プロセスビルダーと比較して処理が高速であることがメリットです。例えば、コンパイルサイズの非常に大きな数式を作成している場合は、このフローに置き換えるとメンテナンスしやすくなる可能性があるでしょう。
 保存前フローは、レコードトリガフローを作成し、[開始] 要素の [フローを実行] 欄で [レコードが保存される前] を選択することで利用できます。プロセスビルダーとの比較については、『レコードトリガフローの考慮事項』を参照してください。
 保存前フローの基礎 #  保存前フローでは、対象のレコードが $Record 変数で管理されます。レコードを更新する場合は、[レコードの更新] 要素の代わりに、[割り当て] 要素を使用して、この変数の項目に値を設定します。
-複合項目の取り扱い #  納入先住所や請求先住所は ShippingAddress、BillingAddress といった項目で管理されますが、これらは複合項目と呼ばれ、読み取り専用です。少し手間がかかりますが、値を割り当てる際は、元の項目群 (郵便番号 (ShippingPostalCode) や都道府県 (ShippingState) など) を個別に扱う必要があります。"><meta name=theme-color content="#FFFFFF"><meta property="og:title" content="取引先の請求先住所を納入先住所に自動コピー"><meta property="og:description" content="ポイント #  取引先の請求先住所を納入先住所に自動コピーするフローです。
+複合項目の取り扱い #  納入先住所や請求先住所は ShippingAddress、BillingAddress といった項目で管理されますが、これらは複合項目と呼ばれ、読み取り専用です。少し手間がかかりますが、値を割り当てる際は、元の項目群 (郵便番号 (ShippingPostalCode) や都道府県 (ShippingState) など) を個別に扱う必要があります。">
+<meta name=theme-color content="#FFFFFF"><meta property="og:title" content="取引先の請求先住所を納入先住所に自動コピー">
+<meta property="og:description" content="ポイント #  取引先の請求先住所を納入先住所に自動コピーするフローです。
 保存前フローについて #  Spring &lsquo;20 で GA となった保存前フローはプロセスビルダーと同様に、レコードの作成や更新をきっかけとして起動する自動化プロセスです。プロセスビルダーと比較して処理が高速であることがメリットです。例えば、コンパイルサイズの非常に大きな数式を作成している場合は、このフローに置き換えるとメンテナンスしやすくなる可能性があるでしょう。
 保存前フローは、レコードトリガフローを作成し、[開始] 要素の [フローを実行] 欄で [レコードが保存される前] を選択することで利用できます。プロセスビルダーとの比較については、『レコードトリガフローの考慮事項』を参照してください。
 保存前フローの基礎 #  保存前フローでは、対象のレコードが $Record 変数で管理されます。レコードを更新する場合は、[レコードの更新] 要素の代わりに、[割り当て] 要素を使用して、この変数の項目に値を設定します。
-複合項目の取り扱い #  納入先住所や請求先住所は ShippingAddress、BillingAddress といった項目で管理されますが、これらは複合項目と呼ばれ、読み取り専用です。少し手間がかかりますが、値を割り当てる際は、元の項目群 (郵便番号 (ShippingPostalCode) や都道府県 (ShippingState) など) を個別に扱う必要があります。"><meta property="og:type" content="article"><meta property="og:url" content="https://shunkosa.github.io/lightning-flow-recipes-jp/sync-account-billing-address-to-shipping-address/"><meta property="article:section" content><meta property="article:published_time" content="2020-02-28T00:00:00+00:00"><meta property="article:modified_time" content="2020-02-28T00:00:00+00:00"><title>取引先の請求先住所を納入先住所に自動コピー | Salesforce Flow Recipes</title><link rel=manifest href=/lightning-flow-recipes-jp/manifest.json><link rel=icon href=/lightning-flow-recipes-jp/favicon.png type=image/x-icon><link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel=stylesheet><link rel=stylesheet href=/lightning-flow-recipes-jp/book.min.c43b596a4d60811469270724ebd1598ef06aa86a59d8945595ff128ed09c5fab.css integrity="sha256-xDtZak1ggRRpJwck69FZjvBqqGpZ2JRVlf8SjtCcX6s="><script async src="https://www.googletagmanager.com/gtag/js?id=G-ESEWC9RTQC"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-ESEWC9RTQC')</script><script defer src=/lightning-flow-recipes-jp/ja.search.min.017071391d26ade406f8bab59f1f659f443df2eb4665c12b7086475c6163f011.js integrity="sha256-AXBxOR0mreQG+Lq1nx9ln0Q98utGZcErcIZHXGFj8BE="></script></head><body><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><nav><h2 class=book-brand><a href=/lightning-flow-recipes-jp><span>Salesforce Flow Recipes</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=検索 aria-label=検索 maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><a href=/lightning-flow-recipes-jp/>トップページ・レシピ集</a></li><li><a href=/lightning-flow-recipes-jp/changelog/>リリースノート</a></li><li>補足<ul><li><a href=/lightning-flow-recipes-jp/design-guideline/>実装時に気をつけると良いこと</a></li><li><a href=/lightning-flow-recipes-jp/unsupported-features/>レコードトリガフローの考慮事項</a><br></li></ul></li></ul><ul><li><a href=https://github.com/shunkosa/lightning-flow-recipes-jp/ target=_blank rel=noopener>GitHub</a></li></ul></nav><script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/lightning-flow-recipes-jp/svg/menu.svg class=book-icon alt=Menu></label>
+複合項目の取り扱い #  納入先住所や請求先住所は ShippingAddress、BillingAddress といった項目で管理されますが、これらは複合項目と呼ばれ、読み取り専用です。少し手間がかかりますが、値を割り当てる際は、元の項目群 (郵便番号 (ShippingPostalCode) や都道府県 (ShippingState) など) を個別に扱う必要があります。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shunkosa.github.io/lightning-flow-recipes-jp/sync-account-billing-address-to-shipping-address/"><meta property="article:section" content>
+<meta property="article:published_time" content="2020-02-28T00:00:00+00:00">
+<meta property="article:modified_time" content="2020-02-28T00:00:00+00:00">
+<title>取引先の請求先住所を納入先住所に自動コピー | Salesforce Flow Recipes</title>
+<link rel=manifest href=/lightning-flow-recipes-jp/manifest.json>
+<link rel=icon href=/lightning-flow-recipes-jp/favicon.png type=image/x-icon>
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel=stylesheet>
+<link rel=stylesheet href=/lightning-flow-recipes-jp/book.min.c43b596a4d60811469270724ebd1598ef06aa86a59d8945595ff128ed09c5fab.css integrity="sha256-xDtZak1ggRRpJwck69FZjvBqqGpZ2JRVlf8SjtCcX6s=">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESEWC9RTQC"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-ESEWC9RTQC')</script>
+<script defer src=/lightning-flow-recipes-jp/ja.search.min.8cbefdbe2581ced3fc492b4c1d0731ab4fb6de5e37ce6c66872ab608941d79a1.js integrity="sha256-jL79viWBztP8SStMHQcxq0+23l43zmxmhyq2CJQdeaE="></script>
+</head>
+<body>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<nav>
+<h2 class=book-brand>
+<a href=/lightning-flow-recipes-jp><span>Salesforce Flow Recipes</span>
+</a>
+</h2>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=検索 aria-label=検索 maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
+</div>
+<ul>
+<li><a href=/lightning-flow-recipes-jp/>トップページ・レシピ集</a></li>
+<li><a href=/lightning-flow-recipes-jp/changelog/>リリースノート</a></li>
+<li>補足
+<ul>
+<li><a href=/lightning-flow-recipes-jp/design-guideline/>実装時に気をつけると良いこと</a></li>
+<li><a href=/lightning-flow-recipes-jp/unsupported-features/>レコードトリガフローの考慮事項</a>
+<br></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<a href=https://github.com/shunkosa/lightning-flow-recipes-jp/ target=_blank rel=noopener>
+GitHub
+</a>
+</li>
+</ul>
+</nav>
+<script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=/lightning-flow-recipes-jp/svg/menu.svg class=book-icon alt=Menu>
+</label>
 <strong>取引先の請求先住所を納入先住所に自動コピー</strong>
-<label for=toc-control><img src=/lightning-flow-recipes-jp/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#ポイント>ポイント</a><ul><li><a href=#保存前フローについて>保存前フローについて</a></li><li><a href=#保存前フローの基礎>保存前フローの基礎</a></li><li><a href=#複合項目の取り扱い>複合項目の取り扱い</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1>取引先の請求先住所を納入先住所に自動コピー</h1><p><img src=screenshot.png alt></p><h2 id=ポイント>ポイント
-<a class=anchor href=#%e3%83%9d%e3%82%a4%e3%83%b3%e3%83%88>#</a></h2><p>取引先の請求先住所を納入先住所に自動コピーするフローです。</p><h3 id=保存前フローについて>保存前フローについて
-<a class=anchor href=#%e4%bf%9d%e5%ad%98%e5%89%8d%e3%83%95%e3%83%ad%e3%83%bc%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6>#</a></h3><p><a href=https://releasenotes.docs.salesforce.com/ja-jp/spring20/release-notes/rn_forcecom_flow_fbuilder_before_save_updates.htm>Spring &lsquo;20 で GA となった保存前フロー</a>はプロセスビルダーと同様に、レコードの作成や更新をきっかけとして起動する自動化プロセスです。プロセスビルダーと比較して処理が高速であることがメリットです。例えば、コンパイルサイズの非常に大きな数式を作成している場合は、このフローに置き換えるとメンテナンスしやすくなる可能性があるでしょう。</p><p>保存前フローは、レコードトリガフローを作成し、[開始] 要素の [フローを実行] 欄で [レコードが保存される前] を選択することで利用できます。プロセスビルダーとの比較については、『<a href=../unsupported-features>レコードトリガフローの考慮事項</a>』を参照してください。</p><p><img src=start_element.png alt></p><h3 id=保存前フローの基礎>保存前フローの基礎
-<a class=anchor href=#%e4%bf%9d%e5%ad%98%e5%89%8d%e3%83%95%e3%83%ad%e3%83%bc%e3%81%ae%e5%9f%ba%e7%a4%8e>#</a></h3><p>保存前フローでは、対象のレコードが <code>$Record</code> 変数で管理されます。レコードを更新する場合は、[レコードの更新] 要素の代わりに、[割り当て] 要素を使用して、この変数の項目に値を設定します。</p><h3 id=複合項目の取り扱い>複合項目の取り扱い
-<a class=anchor href=#%e8%a4%87%e5%90%88%e9%a0%85%e7%9b%ae%e3%81%ae%e5%8f%96%e3%82%8a%e6%89%b1%e3%81%84>#</a></h3><p><img src=before_save_flow_assign.png alt></p><p>納入先住所や請求先住所は <code>ShippingAddress</code>、<code>BillingAddress</code> といった項目で管理されますが、これらは複合項目と呼ばれ、<strong>読み取り専用</strong>です。少し手間がかかりますが、値を割り当てる際は、元の項目群 (郵便番号 (<code>ShippingPostalCode</code>) や都道府県 (<code>ShippingState</code>) など) を個別に扱う必要があります。</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><nav id=TableOfContents><ul><li><a href=#ポイント>ポイント</a><ul><li><a href=#保存前フローについて>保存前フローについて</a></li><li><a href=#保存前フローの基礎>保存前フローの基礎</a></li><li><a href=#複合項目の取り扱い>複合項目の取り扱い</a></li></ul></li></ul></nav></aside></main></body></html>
+<label for=toc-control>
+<img src=/lightning-flow-recipes-jp/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
+</div>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#ポイント>ポイント</a>
+<ul>
+<li><a href=#保存前フローについて>保存前フローについて</a></li>
+<li><a href=#保存前フローの基礎>保存前フローの基礎</a></li>
+<li><a href=#複合項目の取り扱い>複合項目の取り扱い</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</aside>
+</header>
+<article class=markdown>
+<h1>取引先の請求先住所を納入先住所に自動コピー</h1><p><img src=screenshot.png alt></p>
+<h2 id=ポイント>
+ポイント
+<a class=anchor href=#%e3%83%9d%e3%82%a4%e3%83%b3%e3%83%88>#</a>
+</h2>
+<p>取引先の請求先住所を納入先住所に自動コピーするフローです。</p>
+<h3 id=保存前フローについて>
+保存前フローについて
+<a class=anchor href=#%e4%bf%9d%e5%ad%98%e5%89%8d%e3%83%95%e3%83%ad%e3%83%bc%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6>#</a>
+</h3>
+<p><a href=https://releasenotes.docs.salesforce.com/ja-jp/spring20/release-notes/rn_forcecom_flow_fbuilder_before_save_updates.htm>Spring &lsquo;20 で GA となった保存前フロー</a>はプロセスビルダーと同様に、レコードの作成や更新をきっかけとして起動する自動化プロセスです。プロセスビルダーと比較して処理が高速であることがメリットです。例えば、コンパイルサイズの非常に大きな数式を作成している場合は、このフローに置き換えるとメンテナンスしやすくなる可能性があるでしょう。</p>
+<p>保存前フローは、レコードトリガフローを作成し、[開始] 要素の [フローを実行] 欄で [レコードが保存される前] を選択することで利用できます。プロセスビルダーとの比較については、『<a href=../unsupported-features>レコードトリガフローの考慮事項</a>』を参照してください。</p>
+<p><img src=start_element.png alt></p>
+<h3 id=保存前フローの基礎>
+保存前フローの基礎
+<a class=anchor href=#%e4%bf%9d%e5%ad%98%e5%89%8d%e3%83%95%e3%83%ad%e3%83%bc%e3%81%ae%e5%9f%ba%e7%a4%8e>#</a>
+</h3>
+<p>保存前フローでは、対象のレコードが <code>$Record</code> 変数で管理されます。レコードを更新する場合は、[レコードの更新] 要素の代わりに、[割り当て] 要素を使用して、この変数の項目に値を設定します。</p>
+<h3 id=複合項目の取り扱い>
+複合項目の取り扱い
+<a class=anchor href=#%e8%a4%87%e5%90%88%e9%a0%85%e7%9b%ae%e3%81%ae%e5%8f%96%e3%82%8a%e6%89%b1%e3%81%84>#</a>
+</h3>
+<p><img src=before_save_flow_assign.png alt></p>
+<p>納入先住所や請求先住所は <code>ShippingAddress</code>、<code>BillingAddress</code> といった項目で管理されますが、これらは複合項目と呼ばれ、<strong>読み取り専用</strong>です。少し手間がかかりますが、値を割り当てる際は、元の項目群 (郵便番号 (<code>ShippingPostalCode</code>) や都道府県 (<code>ShippingState</code>) など) を個別に扱う必要があります。</p>
+</article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
+</div>
+</footer>
+<div class=book-comments>
+</div>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#ポイント>ポイント</a>
+<ul>
+<li><a href=#保存前フローについて>保存前フローについて</a></li>
+<li><a href=#保存前フローの基礎>保存前フローの基礎</a></li>
+<li><a href=#複合項目の取り扱い>複合項目の取り扱い</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</aside>
+</main>
+</body>
+</html>
