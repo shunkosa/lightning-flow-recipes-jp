@@ -3,14 +3,12 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content="Help に記載のベストプラクティス に可能な限り従ってください。
-命名規則 #  各要素の API 名には命名規則を設けることで保守性が高まります。このレシピでは一例として以下の命名規則を定めています。また、各要素の [説明] 欄には可能な限りその目的を入力しておきましょう。
-   要素 命名規則の例 API名の例     画面 screen_ で始める screen_LeadUpdate   画面の入力要素 input_ で始める input_FirstName   画面の表示要素 display_ で始める display_ErrorMessage   数式 formula_ で始める formula_Today   変数 var_ で始める
-(※recordId は例外) var_AccountId   決定 decision_ で始める decision_Profile   ループ loop_ で始める loop_Contacts   割り当て assign_ で始める assign_AccountShippingAddress   レコードを取得 ・get_ で始める">
+全体設計 #   フローで実現したい処理が複雑な場合は、1 つのフローに何でも要素を詰め込むのではなく、サブフローに分割し、見通しのよいフローを作ることを心がけましょう。単に巨大な処理を分割するだけでなく、複数のフローで同じ処理を行いたい場合や、一部の処理で権限を昇格したい(例えば、ユーザ権限の画面フローで、システムオブジェクトにアクセスしたいなど)場合にもサブフローは活用できます。 変更される可能性がある値や、環境によって異なる値は、カスタム表示ラベルやカスタムメタデータに保存しましょう。要素内に直接値を設定するとメンテナンスが大変です。 1 オブジェクトにレコードトリガフロー、Apex トリガ、プロセス、ワークフロールールを混在させることを控えましょう。  フローやプロセス、ワークフロールールの機能比較、性能比較、ロードマップについては、『Architect’s Guide to Building Record-Triggered Automation』を参照してください。 既に組織のメインオブジェクトに複雑なプロセスビルダーや Apex トリガがある場合は、Winter &lsquo;22 でレコードトリガフローでサブフローが対応されることを待ってから移行を検討すると良いでしょう。    命名規則 #  各要素の API 名には命名規則を設けることで保守性が高まります。このレシピでは一例として以下の命名規則を定めています。また、各要素の [説明] 欄には可能な限りその目的を入力しておきましょう。
+   要素 命名規則の例 API名の例     画面 screen_ で始める screen_LeadUpdate   画面の入力要素 input_ で始める input_FirstName   画面の表示要素 display_ で始める display_ErrorMessage   数式 formula_ で始める formula_Today   変数 var_ で始める">
 <meta name=theme-color content="#FFFFFF"><meta property="og:title" content="実装時に気をつけると良いこと">
 <meta property="og:description" content="Help に記載のベストプラクティス に可能な限り従ってください。
-命名規則 #  各要素の API 名には命名規則を設けることで保守性が高まります。このレシピでは一例として以下の命名規則を定めています。また、各要素の [説明] 欄には可能な限りその目的を入力しておきましょう。
-   要素 命名規則の例 API名の例     画面 screen_ で始める screen_LeadUpdate   画面の入力要素 input_ で始める input_FirstName   画面の表示要素 display_ で始める display_ErrorMessage   数式 formula_ で始める formula_Today   変数 var_ で始める
-(※recordId は例外) var_AccountId   決定 decision_ で始める decision_Profile   ループ loop_ で始める loop_Contacts   割り当て assign_ で始める assign_AccountShippingAddress   レコードを取得 ・get_ で始める">
+全体設計 #   フローで実現したい処理が複雑な場合は、1 つのフローに何でも要素を詰め込むのではなく、サブフローに分割し、見通しのよいフローを作ることを心がけましょう。単に巨大な処理を分割するだけでなく、複数のフローで同じ処理を行いたい場合や、一部の処理で権限を昇格したい(例えば、ユーザ権限の画面フローで、システムオブジェクトにアクセスしたいなど)場合にもサブフローは活用できます。 変更される可能性がある値や、環境によって異なる値は、カスタム表示ラベルやカスタムメタデータに保存しましょう。要素内に直接値を設定するとメンテナンスが大変です。 1 オブジェクトにレコードトリガフロー、Apex トリガ、プロセス、ワークフロールールを混在させることを控えましょう。  フローやプロセス、ワークフロールールの機能比較、性能比較、ロードマップについては、『Architect’s Guide to Building Record-Triggered Automation』を参照してください。 既に組織のメインオブジェクトに複雑なプロセスビルダーや Apex トリガがある場合は、Winter &lsquo;22 でレコードトリガフローでサブフローが対応されることを待ってから移行を検討すると良いでしょう。    命名規則 #  各要素の API 名には命名規則を設けることで保守性が高まります。このレシピでは一例として以下の命名規則を定めています。また、各要素の [説明] 欄には可能な限りその目的を入力しておきましょう。
+   要素 命名規則の例 API名の例     画面 screen_ で始める screen_LeadUpdate   画面の入力要素 input_ で始める input_FirstName   画面の表示要素 display_ で始める display_ErrorMessage   数式 formula_ で始める formula_Today   変数 var_ で始める">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://shunkosa.github.io/lightning-flow-recipes-jp/design-guideline/"><meta property="article:section" content>
 <meta property="article:published_time" content="2020-07-20T00:00:00+00:00">
@@ -22,7 +20,7 @@
 <link rel=stylesheet href=/lightning-flow-recipes-jp/book.min.c43b596a4d60811469270724ebd1598ef06aa86a59d8945595ff128ed09c5fab.css integrity="sha256-xDtZak1ggRRpJwck69FZjvBqqGpZ2JRVlf8SjtCcX6s=">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESEWC9RTQC"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-ESEWC9RTQC')</script>
-<script defer src=/lightning-flow-recipes-jp/ja.search.min.e5f11d3c814e387bea632b595e6f240c859602a21f4733613dedfebbc5219e21.js integrity="sha256-5fEdPIFOOHvqYytZXm8kDIWWAqIfRzNhPe3+u8UhniE="></script>
+<script defer src=/lightning-flow-recipes-jp/ja.search.min.6da91eeee23b3ba03a3d468fe837e8dc32549c1d91669d9846eef91ca43cb748.js integrity="sha256-bake7uI7O6A6PUaP6Dfo3DJUnB2RZp2YRu75HKQ8t0g="></script>
 </head>
 <body>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -73,16 +71,31 @@ GitHub
 <aside class="hidden clearfix">
 <nav id=TableOfContents>
 <ul>
+<li><a href=#全体設計>全体設計</a></li>
 <li><a href=#命名規則>命名規則</a></li>
 <li><a href=#主要なガバナ制約>主要なガバナ制約</a></li>
 <li><a href=#実行ユーザ>実行ユーザ</a></li>
-<li><a href=#レコードトリガフローと他の自動化プロセスの比較>レコードトリガフローと他の自動化プロセスの比較</a></li>
+<li><a href=#権限制御>権限制御</a></li>
 </ul>
 </nav>
 </aside>
 </header>
 <article class=markdown>
 <h1>実装時に気をつけると良いこと</h1><p><a href="https://help.salesforce.com/articleView?id=flow_prep_bestpractices.htm&type=5">Help に記載のベストプラクティス</a> に可能な限り従ってください。</p>
+<h2 id=全体設計>
+全体設計
+<a class=anchor href=#%e5%85%a8%e4%bd%93%e8%a8%ad%e8%a8%88>#</a>
+</h2>
+<ul>
+<li>フローで実現したい処理が複雑な場合は、1 つのフローに何でも要素を詰め込むのではなく、サブフローに分割し、見通しのよいフローを作ることを心がけましょう。単に巨大な処理を分割するだけでなく、複数のフローで同じ処理を行いたい場合や、一部の処理で権限を昇格したい(例えば、ユーザ権限の画面フローで、システムオブジェクトにアクセスしたいなど)場合にもサブフローは活用できます。</li>
+<li>変更される可能性がある値や、環境によって異なる値は、カスタム表示ラベルやカスタムメタデータに保存しましょう。要素内に直接値を設定するとメンテナンスが大変です。</li>
+<li>1 オブジェクトにレコードトリガフロー、Apex トリガ、プロセス、ワークフロールールを混在させることを控えましょう。
+<ul>
+<li>フローやプロセス、ワークフロールールの機能比較、性能比較、ロードマップについては、<a href=https://architect.salesforce.com/design/decision-guides/trigger-automation/>『Architect’s Guide to Building Record-Triggered Automation』</a>を参照してください。</li>
+<li>既に組織のメインオブジェクトに複雑なプロセスビルダーや Apex トリガがある場合は、Winter &lsquo;22 でレコードトリガフローでサブフローが対応されることを待ってから移行を検討すると良いでしょう。</li>
+</ul>
+</li>
+</ul>
 <h2 id=命名規則>
 命名規則
 <a class=anchor href=#%e5%91%bd%e5%90%8d%e8%a6%8f%e5%89%87>#</a>
@@ -184,18 +197,19 @@ GitHub
 <li>Summer &lsquo;20 から<a href=https://releasenotes.docs.salesforce.com/ja-jp/summer20/release-notes/rn_forcecom_flow_fbuilder_system_mode_no_sharing.htm>開始要素でフローの実行ユーザを細かく制御できる</a>ようになりました。</li>
 <li>自動起動フローは、呼び出し元の実行ユーザを引き継ぎます。プロセスからフローを起動する場合、プロセスの実行はシステムコンテキストとなるため、呼び出されるフローの実行ユーザもシステムコンテキストとなります。</li>
 </ul>
-<h2 id=レコードトリガフローと他の自動化プロセスの比較>
-レコードトリガフローと他の自動化プロセスの比較
-<a class=anchor href=#%e3%83%ac%e3%82%b3%e3%83%bc%e3%83%89%e3%83%88%e3%83%aa%e3%82%ac%e3%83%95%e3%83%ad%e3%83%bc%e3%81%a8%e4%bb%96%e3%81%ae%e8%87%aa%e5%8b%95%e5%8c%96%e3%83%97%e3%83%ad%e3%82%bb%e3%82%b9%e3%81%ae%e6%af%94%e8%bc%83>#</a>
+<h2 id=権限制御>
+権限制御
+<a class=anchor href=#%e6%a8%a9%e9%99%90%e5%88%b6%e5%be%a1>#</a>
 </h2>
 <ul>
-<li>フローやプロセス、ワークフロールールの機能比較、性能比較、ロードマップについては、<a href=https://architect.salesforce.com/design/decision-guides/trigger-automation/>『Architect’s Guide to Building Record-Triggered Automation』</a>を参照してください。</li>
-<li>他、レコードトリガフローには以下の制限があります。(※Spring &lsquo;21 時点)
+<li>フロー全体への権限については、[フローを実行] 権限やユーザの [フローユーザ] 項目を使用します。</li>
+<li>単一のフローに対してアクセス制御を行たい場合は、各フローの [編集アクセス権] から、[デフォルト動作を上書きし、有効化されたプロファイルまたは権限セットにアクセスを制限します。] にチェックを入れ、アクセスできるプロファイルや権限セットを選択します。</li>
+<li>フローの中で、特定の権限の場合に処理を実行したい場合は、決定要素にプロファイルやカスタム権限を条件に使用して、処理を分岐させると良いでしょう。
 <ul>
-<li>サブフローが起動できない (Winter &lsquo;22 で対応予定)</li>
-<li>承認プロセスのレコード更新アクションによりフローが起動しない。</li>
+<li>例: <a href=mass-campaign-delete-by-admin-screen>システム管理者だけが自分が作成したキャンペーンを一括削除できる画面</a></li>
 </ul>
 </li>
+<li>ユーザコンテキストでフローを実行する場合は、設定系のオブジェクトや管理者固有の項目など、一般ユーザが表示できないオブジェクトに対してどうしてもアクセスが必要な場合は、システム権限で実行されるサブフローにその処理を移しましょう。</li>
 </ul>
 </article>
 <footer class=book-footer>
@@ -209,10 +223,11 @@ GitHub
 <aside class=book-toc>
 <nav id=TableOfContents>
 <ul>
+<li><a href=#全体設計>全体設計</a></li>
 <li><a href=#命名規則>命名規則</a></li>
 <li><a href=#主要なガバナ制約>主要なガバナ制約</a></li>
 <li><a href=#実行ユーザ>実行ユーザ</a></li>
-<li><a href=#レコードトリガフローと他の自動化プロセスの比較>レコードトリガフローと他の自動化プロセスの比較</a></li>
+<li><a href=#権限制御>権限制御</a></li>
 </ul>
 </nav>
 </aside>
