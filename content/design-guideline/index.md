@@ -35,3 +35,10 @@ draft: false
 
 * Summer '20 から[開始要素でフローの実行ユーザを細かく制御できる](https://releasenotes.docs.salesforce.com/ja-jp/summer20/release-notes/rn_forcecom_flow_fbuilder_system_mode_no_sharing.htm)ようになりました。
 * 自動起動フローは、呼び出し元の実行ユーザを引き継ぎます。プロセスからフローを起動する場合、プロセスの実行はシステムコンテキストとなるため、呼び出されるフローの実行ユーザもシステムコンテキストとなります。
+
+## レコードトリガフローと他の自動化プロセスの比較
+
+* フローやプロセス、ワークフロールールの機能比較、性能比較、ロードマップについては、[『Architect’s Guide to Building Record-Triggered Automation』](https://architect.salesforce.com/design/decision-guides/trigger-automation/)を参照してください。
+* 他、レコードトリガフローには以下の制限があります。(※Spring '21 時点)
+  * サブフローが起動できない (Winter '22 で対応予定)
+  * 承認プロセスのレコード更新アクションによりフローが起動しない。
